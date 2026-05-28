@@ -155,9 +155,22 @@ html, body { height: 100%; font-family: 'Segoe UI', system-ui, sans-serif; backg
 }
 .section-card h2 {
   font-size: 15px; font-weight: 700; color: var(--blue-dark);
-  border-bottom: 2px solid var(--blue-light);
-  padding-bottom: 10px; margin-bottom: 14px;
+  padding-bottom: 8px;
   display: flex; align-items: center; gap: 8px;
+}
+.select-all-wrap {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 500; color: var(--text-mid);
+  cursor: pointer; user-select: none;
+  padding: 4px 0 8px;
+  border-bottom: 2px solid var(--blue-light);
+  margin-bottom: 14px;
+}
+.select-all-wrap input[type="checkbox"] {
+  width: 15px; height: 15px;
+  accent-color: var(--blue-mid);
+  cursor: pointer;
+  flex-shrink: 0;
 }
 .section-card h3 {
   font-size: 13px; font-weight: 600; color: var(--blue-mid);
@@ -528,6 +541,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel active" id="panel-haematology">
         <div class="section-card">
           <h2>🩸 Haematology</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-haematology', this)"> Select All</label>
           <div id="tests-haematology"></div>
           <h3>DLC</h3>
           <div id="tests-dlc"></div>
@@ -538,6 +552,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-urine">
         <div class="section-card">
           <h2>💧 Urine</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-urine', this)"> Select All</label>
           <div id="tests-urine"></div>
           <h3>Microscopic Examination</h3>
           <div id="tests-microscopic"></div>
@@ -548,6 +563,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-special-urine">
         <div class="section-card">
           <h2>🧪 Special Urine Tests</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-special-urine', this)"> Select All</label>
           <div id="tests-special-urine"></div>
         </div>
       </div>
@@ -556,6 +572,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-stool">
         <div class="section-card">
           <h2>💩 Stool</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-stool', this)"> Select All</label>
           <div id="tests-stool"></div>
         </div>
       </div>
@@ -564,6 +581,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-serology">
         <div class="section-card">
           <h2>🧫 Serology &amp; Parasitology</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-serology', this)"> Select All</label>
           <div id="tests-serology"></div>
           <h3>🦟 Dengue Test</h3>
           <div id="tests-dengue"></div>
@@ -574,6 +592,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-widal">
         <div class="section-card">
           <h2>🌡️ Widal</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-widal', this)"> Select All</label>
           <div id="tests-widal"></div>
         </div>
       </div>
@@ -582,6 +601,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-well-felix">
         <div class="section-card">
           <h2>🦠 Well Felix</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-well-felix', this)"> Select All</label>
           <div id="tests-well-felix"></div>
         </div>
       </div>
@@ -590,6 +610,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-quantitative">
         <div class="section-card">
           <h2>📊 Quantitative Tests</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-quantitative', this)"> Select All</label>
           <div id="tests-quantitative"></div>
         </div>
       </div>
@@ -598,6 +619,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-blood-sugar">
         <div class="section-card">
           <h2>🍬 Blood Sugar</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-blood-sugar', this)"> Select All</label>
           <div id="tests-blood-sugar"></div>
         </div>
       </div>
@@ -606,6 +628,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-rft">
         <div class="section-card">
           <h2>🫘 RFT / KFT</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-rft', this)"> Select All</label>
           <div id="tests-rft"></div>
         </div>
       </div>
@@ -614,6 +637,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-lft">
         <div class="section-card">
           <h2>🫀 LFT</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-lft', this)"> Select All</label>
           <div id="tests-lft"></div>
           <h3>Alka. Phos</h3>
           <div id="tests-alkaphos"></div>
@@ -624,6 +648,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-lipid">
         <div class="section-card">
           <h2>🧈 Lipid Profile</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-lipid', this)"> Select All</label>
           <div id="tests-lipid"></div>
         </div>
       </div>
@@ -632,6 +657,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-electrolytes">
         <div class="section-card">
           <h2>⚡ Serum Electrolytes</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-electrolytes', this)"> Select All</label>
           <div id="tests-electrolytes"></div>
         </div>
       </div>
@@ -640,6 +666,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-biochemistry">
         <div class="section-card">
           <h2>🔬 Biochemistry</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-biochemistry', this)"> Select All</label>
           <div id="tests-biochemistry"></div>
         </div>
       </div>
@@ -648,6 +675,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-cardiac">
         <div class="section-card">
           <h2>❤️ Cardiac Profile</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-cardiac', this)"> Select All</label>
           <div id="tests-cardiac"></div>
         </div>
       </div>
@@ -656,6 +684,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-tsh">
         <div class="section-card">
           <h2>🧬 Thyroid Stimulating Hormone</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-tsh', this)"> Select All</label>
           <div id="tests-tsh"></div>
           <h3>T3 &amp; T4</h3>
           <div id="tests-t3t4"></div>
@@ -666,6 +695,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-vitd">
         <div class="section-card">
           <h2>☀️ Vit D</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-vitd', this)"> Select All</label>
           <div id="tests-vitd"></div>
         </div>
       </div>
@@ -674,6 +704,7 @@ body::-webkit-scrollbar { width: 6px; }
       <div class="section-panel" id="panel-hba1c">
         <div class="section-card">
           <h2>🩺 HBA1C</h2>
+          <label class="select-all-wrap"><input type="checkbox" onchange="selectAllInPanel('panel-hba1c', this)"> Select All</label>
           <div id="tests-hba1c"></div>
         </div>
       </div>
@@ -921,7 +952,7 @@ function buildSection(containerId, tests) {
 Object.entries(TESTS).forEach(([id, tests]) => buildSection(`tests-${id}`, tests));
 
 // ── Toggle test ───────────────────────────────────────────────────────────────
-function toggleTest(cb) {
+function toggleTest(cb, noFocus) {
   const key = cb.id.replace('cb-', '');
   const inp = document.getElementById(`inp-${key}`);
   const row = cb.closest('.test-row');
@@ -932,7 +963,7 @@ function toggleTest(cb) {
     } else {
       inp.disabled = false;
       inp.classList.add('enabled');
-      inp.focus();
+      if (!noFocus) inp.focus();
     }
     row.classList.add('checked');
   } else {
@@ -1218,6 +1249,24 @@ document.addEventListener('click', e => {
     popup.style.display = 'none';
   }
 });
+
+// ── Select All ────────────────────────────────────────────────────────────────
+function selectAllInPanel(panelId, masterCb) {
+  const panel = document.getElementById(panelId);
+  if (!panel) return;
+  const scrollY = document.getElementById('content').scrollTop;
+  const checkboxes = panel.querySelectorAll('.test-row input[type="checkbox"]');
+  checkboxes.forEach(cb => {
+    if (cb.checked !== masterCb.checked) {
+      cb.checked = masterCb.checked;
+      toggleTest(cb, true);
+    }
+  });
+  // Restore scroll position so page doesn't jump
+  requestAnimationFrame(() => {
+    document.getElementById('content').scrollTop = scrollY;
+  });
+}
 
 // ── Init ──────────────────────────────────────────────────────────────────────────
 window.addEventListener('pywebviewready', async () => {
