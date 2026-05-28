@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mercy Hospital Lab</title>
+<style>
+/* ── Reset & Base ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --blue-dark:   #1A3A5C;
+  --blue-mid:    #2B6CB0;
+  --blue-light:  #EBF4FF;
+  --blue-pale:   #F0F6FF;
+  --accent:      #3182CE;
+  --white:       #FFFFFF;
+  --gray-bg:     #F4F7FB;
+  --gray-border: #D0DCE8;
+  --gray-mid:    #8898aa;
+  --text-dark:   #1A202C;
+  --text-mid:    #4A5568;
+  --red:         #C53030;
+  --green:       #276749;
+  --sidebar-w:   220px;
+  --header-h:    64px;
+  --patient-h:   72px;
+}
+html, body { height: 100%; font-family: 'Segoe UI', system-ui, sans-serif; background: var(--gray-bg); color: var(--text-dark); overflow: hidden; }
+
+/* ── Layout ───────────────────────────────────────────────────────────── */
+#app { display: flex; flex-direction: column; height: 100vh; }
+
+/* ── Top Header ───────────────────────────────────────────────────────── */
+#header {
+  height: var(--header-h);
+  background: var(--blue-dark);
+  display: flex; align-items: center;
+  padding: 0 24px;
+  gap: 16px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  z-index: 10;
+}
+#header .logo {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: white; display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 18px; color: var(--blue-dark); flex-shrink: 0;
+}
+#header .title-block { flex: 1; }
+#header .title-block h1 { font-size: 20px; font-weight: 700; color: white; letter-spacing: 0.5px; }
+#header .title-block p  { font-size: 12px; color: #A0C4E8; margin-top: 1px; }
+#ref-display {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px; font-weight: 600; color: white;
+  cursor: pointer;
+}
+#ref-display:hover { background: rgba(255,255,255,0.18); }
+
+/* ── Patient Bar ──────────────────────────────────────────────────────── */
+#patient-bar {
+  background: white;
+  border-bottom: 1px solid var(--gray-border);
+  padding: 10px 24px;
+  display: flex; align-items: flex-end; gap: 14px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+.pat-field { display: flex; flex-direction: column; gap: 4px; }
+.pat-field label { font-size: 11px; font-weight: 600; color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.4px; }
+.pat-field input, .pat-field select {
+  height: 34px; border: 1.5px solid var(--gray-border);
+  border-radius: 7px; padding: 0 10px;
+  font-size: 13px; color: var(--text-dark);
+  background: var(--gray-bg);
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.pat-field input:focus, .pat-field select:focus {
+  border-color: var(--blue-mid);
+  box-shadow: 0 0 0 3px rgba(43,108,176,0.12);
+  background: white;
+}
+.pat-field select { cursor: pointer; }
+
+/* ── Body (Sidebar + Content) ─────────────────────────────────────────── */
+#body { display: flex; flex: 1; overflow: hidden; }
+
+/* ── Sidebar ──────────────────────────────────────────────────────────── */
+#sidebar {
+  width: var(--sidebar-w);
+  background: var(--blue-dark);
+  display: flex; flex-direction: column;
+  overflow-y: auto; flex-shrink: 0;
+}
+#sidebar::-webkit-scrollbar { width: 4px; }
+#sidebar::-webkit-scrollbar-track { background: transparent; }
+#sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+
+.sidebar-group { padding: 12px 0 4px; }
+.sidebar-group-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
+  color: rgba(255,255,255,0.4);
+  padding: 0 16px 6px;
+  text-transform: uppercase;
+}
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 16px;
+  font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.75);
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+  user-select: none;
+}
+.nav-item:hover { background: rgba(255,255,255,0.08); color: white; }
+.nav-item.active {
+  background: rgba(255,255,255,0.12);
+  color: white; font-weight: 600;
+  border-left-color: #63B3ED;
+}
+.nav-item .nav-icon { font-size: 15px; width: 20px; text-align: center; flex-shrink: 0; }
+.nav-badge {
+  margin-left: auto;
+  background: var(--blue-mid);
+  color: white;
+  font-size: 10px; font-weight: 700;
+  padding: 1px 6px; border-radius: 10px;
+  display: none;
+}
+.nav-badge.show { display: block; }
+
+/* ── Content Area ─────────────────────────────────────────────────────── */
+#content {
+  flex: 1; overflow-y: auto;
+  padding: 24px;
+  background: var(--gray-bg);
+}
+#content::-webkit-scrollbar { width: 6px; }
+#content::-webkit-scrollbar-track { background: transparent; }
+#content::-webkit-scrollbar-thumb { background: var(--gray-border); border-radius: 6px; }
+
+/* ── Section Cards ────────────────────────────────────────────────────── */
+.section-panel { display: none; }
+.section-panel.active { display: block; }
+
+.section-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--gray-border);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.section-card h2 {
+  font-size: 15px; font-weight: 700; color: var(--blue-dark);
+  border-bottom: 2px solid var(--blue-light);
+  padding-bottom: 10px; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-card h3 {
+  font-size: 13px; font-weight: 600; color: var(--blue-mid);
+  margin: 14px 0 8px;
+  padding-left: 8px;
+  border-left: 3px solid var(--blue-mid);
+}
+
+/* ── Test Rows ────────────────────────────────────────────────────────── */
+.test-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background 0.15s;
+  margin-bottom: 2px;
+}
+.test-row:hover { background: var(--blue-pale); }
+.test-row.checked { background: var(--blue-pale); }
+
+.test-row input[type="checkbox"] {
+  width: 16px; height: 16px;
+  accent-color: var(--blue-mid);
+  cursor: pointer; flex-shrink: 0;
+}
+.test-label {
+  min-width: 200px; font-size: 13px; font-weight: 500;
+  color: var(--text-mid); cursor: pointer;
+  transition: color 0.15s;
+}
+.test-row.checked .test-label { color: var(--text-dark); }
+.test-input {
+  width: 130px; height: 32px;
+  border: 1.5px solid var(--gray-border);
+  border-radius: 7px; padding: 0 10px;
+  font-size: 13px; color: var(--text-dark);
+  background: var(--gray-bg);
+  outline: none; transition: all 0.2s;
+  pointer-events: none; opacity: 0.5;
+}
+.test-input.enabled {
+  pointer-events: all; opacity: 1; background: white;
+}
+.test-input.enabled:focus {
+  border-color: var(--blue-mid);
+  box-shadow: 0 0 0 3px rgba(43,108,176,0.12);
+}
+select.test-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238898aa'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px;
+  cursor: pointer;
+}
+select.test-input:disabled {
+  cursor: default;
+}
+.test-unit {
+  font-size: 11px; color: var(--gray-mid);
+  min-width: 80px;
+}
+.test-refs {
+  font-size: 10.5px; color: var(--gray-mid);
+  line-height: 1.6;
+}
+
+/* ── Segmented Option Bar (urine) ─────────────────────────────────────── */
+.seg-bar {
+  display: inline-flex; border-radius: 7px; overflow: hidden;
+  border: 1.5px solid var(--gray-border);
+  height: 32px; flex-shrink: 0;
+  pointer-events: none; opacity: 0.5; transition: opacity 0.2s;
+}
+.seg-bar.enabled { pointer-events: all; opacity: 1; }
+.seg-bar input[type="radio"] { display: none; }
+.seg-bar label {
+  padding: 0 10px; line-height: 29px;
+  font-size: 12px; font-weight: 600;
+  cursor: pointer; transition: all 0.15s;
+  color: var(--text-mid); background: var(--gray-bg);
+  border-right: 1.5px solid var(--gray-border);
+  user-select: none; white-space: nowrap;
+}
+.seg-bar label:last-of-type { border-right: none; }
+.seg-bar input[type="radio"]:checked + label {
+  background: var(--blue-dark); color: white; font-weight: 700;
+}
+
+/* ── Neg/Pos Toggle Pills ─────────────────────────────────────────────── */
+.np-toggle {
+  display: inline-flex; border-radius: 7px; overflow: hidden;
+  border: 1.5px solid var(--gray-border);
+  height: 32px; flex-shrink: 0;
+  pointer-events: none; opacity: 0.5; transition: opacity 0.2s;
+}
+.np-toggle.enabled { pointer-events: all; opacity: 1; }
+.np-toggle input[type="radio"] { display: none; }
+.np-toggle label {
+  padding: 0 14px; line-height: 30px;
+  font-size: 12px; font-weight: 600;
+  cursor: pointer; transition: all 0.15s;
+  color: var(--text-mid); background: var(--gray-bg);
+  user-select: none;
+}
+.np-toggle label:first-of-type { border-right: 1.5px solid var(--gray-border); }
+.np-toggle input[type="radio"]:checked + label {
+  color: white; font-weight: 700;
+}
+.np-toggle input#neg-:checked + label,
+.np-toggle [id^="neg-"]:checked + label { background: var(--green); }
+.np-toggle [id^="pos-"]:checked + label { background: var(--red); }
+
+/* ── Footer ───────────────────────────────────────────────────────────── */
+#footer {
+  background: white;
+  border-top: 1px solid var(--gray-border);
+  padding: 10px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+}
+.footer-left { display: flex; gap: 10px; align-items: center; }
+.footer-right { display: flex; gap: 10px; }
+
+/* ── Buttons ──────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  height: 38px; padding: 0 18px;
+  border: none; border-radius: 8px;
+  font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all 0.18s;
+  user-select: none;
+}
+.btn-primary { background: var(--blue-dark); color: white; }
+.btn-primary:hover { background: var(--blue-mid); box-shadow: 0 2px 8px rgba(43,108,176,0.35); }
+.btn-outline { background: white; color: var(--blue-dark); border: 1.5px solid var(--gray-border); }
+.btn-outline:hover { border-color: var(--blue-mid); color: var(--blue-mid); background: var(--blue-pale); }
+.btn-danger { background: white; color: var(--red); border: 1.5px solid #FED7D7; }
+.btn-danger:hover { background: #FFF5F5; border-color: var(--red); }
+
+/* ── Toast ────────────────────────────────────────────────────────────── */
+#toast {
+  position: fixed; bottom: 70px; right: 24px;
+  background: var(--blue-dark); color: white;
+  padding: 10px 18px; border-radius: 10px;
+  font-size: 13px; font-weight: 500;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  opacity: 0; transform: translateY(8px);
+  transition: all 0.25s; pointer-events: none; z-index: 999;
+}
+#toast.show { opacity: 1; transform: translateY(0); }
+
+/* ── IPD/OPD Toggle ───────────────────────────────────────────────────── */
+.type-toggle {
+  display: flex; border-radius: 8px; overflow: hidden;
+  border: 1.5px solid var(--gray-border);
+  height: 34px; flex-shrink: 0;
+}
+.type-toggle button {
+  padding: 0 16px; border: none; background: var(--gray-bg);
+  font-size: 12px; font-weight: 600; color: var(--text-mid);
+  cursor: pointer; transition: all 0.15s;
+}
+.type-toggle button.active {
+  background: var(--blue-dark); color: white;
+}
+.type-toggle button:first-child { border-right: 1.5px solid var(--gray-border); }
+
+/* ── Scrollbar global ─────────────────────────────────────────────────── */
+body::-webkit-scrollbar { width: 6px; }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- Header -->
+  <div id="header">
+    <div class="logo">M</div>
+    <div class="title-block">
+      <h1>MERCY HOSPITAL</h1>
+      <p>Rural Diagnostic &amp; Research Centre &nbsp;|&nbsp; Ph: 7630974750</p>
+    </div>
+    <div id="ref-display" onclick="newRef()" title="Click to regenerate">📋 <span id="ref-no">ML20260101000</span></div>
+  </div>
+
+  <!-- Patient Bar -->
+  <div id="patient-bar">
+    <!-- IPD / OPD toggle -->
+    <div class="pat-field">
+      <label>Type</label>
+      <div class="type-toggle">
+        <button id="btn-ipd" class="active" onclick="setType('IPD')">IPD</button>
+        <button id="btn-opd" onclick="setType('OPD')">OPD</button>
+      </div>
+    </div>
+    <div class="pat-field" style="flex:2; min-width:160px">
+      <label>Patient Name</label>
+      <input type="text" id="pat-name" placeholder="Full name">
+    </div>
+    <div class="pat-field" style="width:210px;">
+      <label>Age</label>
+      <div style="display:flex; gap:4px; align-items:center;">
+        <input type="number" id="age-num" min="0" max="150" placeholder="0"
+               style="width:52px; height:34px; border:1.5px solid var(--gray-border);
+                      border-radius:7px; padding:0 8px; font-size:13px;
+                      background:var(--gray-bg); outline:none;"
+               oninput="buildAge()" onfocus="this.style.borderColor='var(--blue-mid)'"
+               onblur="this.style.borderColor='var(--gray-border)'">
+        <select id="age-unit"
+                style="height:34px; border:1.5px solid var(--gray-border);
+                       border-radius:7px; padding:0 8px; font-size:13px;
+                       background:var(--gray-bg); outline:none; cursor:pointer;"
+                onchange="buildAge()">
+          <option value="Y">Years</option>
+          <option value="M">Months</option>
+          <option value="D">Days</option>
+        </select>
+        <input type="number" id="age-sub" min="0" max="31" placeholder=""
+               title="Extra sub-unit (optional)"
+               style="width:44px; height:34px; border:1.5px solid var(--gray-border);
+                      border-radius:7px; padding:0 8px; font-size:13px;
+                      background:var(--gray-bg); outline:none; display:none;"
+               oninput="buildAge()" onfocus="this.style.borderColor='var(--blue-mid)'"
+               onblur="this.style.borderColor='var(--gray-border)'">
+        <span id="age-sub-label" style="font-size:11px;color:var(--gray-mid);display:none;"></span>
+      </div>
+      <!-- hidden field that stores the final formatted value -->
+      <input type="hidden" id="pat-age">
+    </div>
+    <div class="pat-field" style="width:80px">
+      <label>Gender</label>
+      <select id="pat-gender"><option>M</option><option>F</option></select>
+    </div>
+    <div class="pat-field" style="flex:2; min-width:160px">
+      <label>Address</label>
+      <input type="text" id="pat-address" placeholder="Address">
+    </div>
+    <!-- IPD-only fields -->
+    <div class="pat-field ipd-only" style="width:110px">
+      <label>Ward</label>
+      <select id="pat-ward">
+        <option>General</option><option>Cabin</option><option>Pedia</option>
+      </select>
+    </div>
+    <div class="pat-field ipd-only" style="width:80px">
+      <label>Bed No.</label>
+      <input type="text" id="pat-bed" placeholder="Bed">
+    </div>
+    <div class="pat-field" style="width:150px;">
+      <label>Date</label>
+      <div style="position:relative; display:flex; align-items:center;">
+        <input type="text" id="pat-date" placeholder="DD-MM-YYYY" readonly
+               style="cursor:pointer; padding-right:32px; width:100%;"
+               onclick="toggleCal(this)">
+        <span onclick="toggleCal(document.getElementById('pat-date'))" style="position:absolute;right:9px;cursor:pointer;font-size:15px;color:var(--blue-mid);">📅</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div id="body">
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Haematology</div>
+        <div class="nav-item active" data-section="haematology" onclick="showSection(this)">
+          <span class="nav-icon">🩸</span> Haematology
+          <span class="nav-badge" id="badge-haematology"></span>
+        </div>
+      </div>
+
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Urine &amp; Stool</div>
+        <div class="nav-item" data-section="urine" onclick="showSection(this)">
+          <span class="nav-icon">💧</span> Urine
+          <span class="nav-badge" id="badge-urine"></span>
+        </div>
+        <div class="nav-item" data-section="special-urine" onclick="showSection(this)">
+          <span class="nav-icon">🧪</span> Special Urine
+          <span class="nav-badge" id="badge-special-urine"></span>
+        </div>
+        <div class="nav-item" data-section="stool" onclick="showSection(this)">
+          <span class="nav-icon">💩</span> Stool
+          <span class="nav-badge" id="badge-stool"></span>
+        </div>
+      </div>
+
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Serology &amp; Immunology</div>
+        <div class="nav-item" data-section="serology" onclick="showSection(this)">
+          <span class="nav-icon">🧫</span> Serology
+          <span class="nav-badge" id="badge-serology"></span>
+        </div>
+
+        <div class="nav-item" data-section="widal" onclick="showSection(this)">
+          <span class="nav-icon">🌡️</span> Widal
+          <span class="nav-badge" id="badge-widal"></span>
+        </div>
+        <div class="nav-item" data-section="well-felix" onclick="showSection(this)">
+          <span class="nav-icon">🦠</span> Well Felix
+          <span class="nav-badge" id="badge-well-felix"></span>
+        </div>
+        <div class="nav-item" data-section="quantitative" onclick="showSection(this)">
+          <span class="nav-icon">📊</span> Quantitative
+          <span class="nav-badge" id="badge-quantitative"></span>
+        </div>
+      </div>
+
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Biochemistry</div>
+        <div class="nav-item" data-section="blood-sugar" onclick="showSection(this)">
+          <span class="nav-icon">🍬</span> Blood Sugar
+          <span class="nav-badge" id="badge-blood-sugar"></span>
+        </div>
+        <div class="nav-item" data-section="rft" onclick="showSection(this)">
+          <span class="nav-icon">🫘</span> RFT / KFT
+          <span class="nav-badge" id="badge-rft"></span>
+        </div>
+        <div class="nav-item" data-section="lft" onclick="showSection(this)">
+          <span class="nav-icon">🫀</span> LFT
+          <span class="nav-badge" id="badge-lft"></span>
+        </div>
+        <div class="nav-item" data-section="lipid" onclick="showSection(this)">
+          <span class="nav-icon">🧈</span> Lipid Profile
+          <span class="nav-badge" id="badge-lipid"></span>
+        </div>
+        <div class="nav-item" data-section="electrolytes" onclick="showSection(this)">
+          <span class="nav-icon">⚡</span> Electrolytes
+          <span class="nav-badge" id="badge-electrolytes"></span>
+        </div>
+        <div class="nav-item" data-section="biochemistry" onclick="showSection(this)">
+          <span class="nav-icon">🔬</span> Biochemistry
+          <span class="nav-badge" id="badge-biochemistry"></span>
+        </div>
+      </div>
+
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Cardiac</div>
+        <div class="nav-item" data-section="cardiac" onclick="showSection(this)">
+          <span class="nav-icon">❤️</span> Cardiac Profile
+          <span class="nav-badge" id="badge-cardiac"></span>
+        </div>
+      </div>
+
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Hormones</div>
+        <div class="nav-item" data-section="tsh" onclick="showSection(this)">
+          <span class="nav-icon">🧬</span> TSH
+          <span class="nav-badge" id="badge-tsh"></span>
+        </div>
+        <div class="nav-item" data-section="vitd" onclick="showSection(this)">
+          <span class="nav-icon">☀️</span> Vit D
+          <span class="nav-badge" id="badge-vitd"></span>
+        </div>
+        <div class="nav-item" data-section="hba1c" onclick="showSection(this)">
+          <span class="nav-icon">🩺</span> HBA1C
+          <span class="nav-badge" id="badge-hba1c"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content panels -->
+    <div id="content">
+
+      <!-- HAEMATOLOGY -->
+      <div class="section-panel active" id="panel-haematology">
+        <div class="section-card">
+          <h2>🩸 Haematology</h2>
+          <div id="tests-haematology"></div>
+          <h3>DLC</h3>
+          <div id="tests-dlc"></div>
+        </div>
+      </div>
+
+      <!-- URINE -->
+      <div class="section-panel" id="panel-urine">
+        <div class="section-card">
+          <h2>💧 Urine</h2>
+          <div id="tests-urine"></div>
+          <h3>Microscopic Examination</h3>
+          <div id="tests-microscopic"></div>
+        </div>
+      </div>
+
+      <!-- SPECIAL URINE -->
+      <div class="section-panel" id="panel-special-urine">
+        <div class="section-card">
+          <h2>🧪 Special Urine Tests</h2>
+          <div id="tests-special-urine"></div>
+        </div>
+      </div>
+
+      <!-- STOOL -->
+      <div class="section-panel" id="panel-stool">
+        <div class="section-card">
+          <h2>💩 Stool</h2>
+          <div id="tests-stool"></div>
+        </div>
+      </div>
+
+      <!-- SEROLOGY -->
+      <div class="section-panel" id="panel-serology">
+        <div class="section-card">
+          <h2>🧫 Serology &amp; Parasitology</h2>
+          <div id="tests-serology"></div>
+          <h3>🦟 Dengue Test</h3>
+          <div id="tests-dengue"></div>
+        </div>
+      </div>
+
+      <!-- WIDAL -->
+      <div class="section-panel" id="panel-widal">
+        <div class="section-card">
+          <h2>🌡️ Widal</h2>
+          <div id="tests-widal"></div>
+        </div>
+      </div>
+
+      <!-- WELL FELIX -->
+      <div class="section-panel" id="panel-well-felix">
+        <div class="section-card">
+          <h2>🦠 Well Felix</h2>
+          <div id="tests-well-felix"></div>
+        </div>
+      </div>
+
+      <!-- QUANTITATIVE -->
+      <div class="section-panel" id="panel-quantitative">
+        <div class="section-card">
+          <h2>📊 Quantitative Tests</h2>
+          <div id="tests-quantitative"></div>
+        </div>
+      </div>
+
+      <!-- BLOOD SUGAR -->
+      <div class="section-panel" id="panel-blood-sugar">
+        <div class="section-card">
+          <h2>🍬 Blood Sugar</h2>
+          <div id="tests-blood-sugar"></div>
+        </div>
+      </div>
+
+      <!-- RFT -->
+      <div class="section-panel" id="panel-rft">
+        <div class="section-card">
+          <h2>🫘 RFT / KFT</h2>
+          <div id="tests-rft"></div>
+        </div>
+      </div>
+
+      <!-- LFT -->
+      <div class="section-panel" id="panel-lft">
+        <div class="section-card">
+          <h2>🫀 LFT</h2>
+          <div id="tests-lft"></div>
+          <h3>Alka. Phos</h3>
+          <div id="tests-alkaphos"></div>
+        </div>
+      </div>
+
+      <!-- LIPID -->
+      <div class="section-panel" id="panel-lipid">
+        <div class="section-card">
+          <h2>🧈 Lipid Profile</h2>
+          <div id="tests-lipid"></div>
+        </div>
+      </div>
+
+      <!-- ELECTROLYTES -->
+      <div class="section-panel" id="panel-electrolytes">
+        <div class="section-card">
+          <h2>⚡ Serum Electrolytes</h2>
+          <div id="tests-electrolytes"></div>
+        </div>
+      </div>
+
+      <!-- BIOCHEMISTRY -->
+      <div class="section-panel" id="panel-biochemistry">
+        <div class="section-card">
+          <h2>🔬 Biochemistry</h2>
+          <div id="tests-biochemistry"></div>
+        </div>
+      </div>
+
+      <!-- CARDIAC -->
+      <div class="section-panel" id="panel-cardiac">
+        <div class="section-card">
+          <h2>❤️ Cardiac Profile</h2>
+          <div id="tests-cardiac"></div>
+        </div>
+      </div>
+
+      <!-- TSH -->
+      <div class="section-panel" id="panel-tsh">
+        <div class="section-card">
+          <h2>🧬 Thyroid Stimulating Hormone</h2>
+          <div id="tests-tsh"></div>
+          <h3>T3 &amp; T4</h3>
+          <div id="tests-t3t4"></div>
+        </div>
+      </div>
+
+      <!-- VIT D -->
+      <div class="section-panel" id="panel-vitd">
+        <div class="section-card">
+          <h2>☀️ Vit D</h2>
+          <div id="tests-vitd"></div>
+        </div>
+      </div>
+
+      <!-- HBA1C -->
+      <div class="section-panel" id="panel-hba1c">
+        <div class="section-card">
+          <h2>🩺 HBA1C</h2>
+          <div id="tests-hba1c"></div>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /body -->
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="footer-left">
+      <button class="btn btn-danger" onclick="clearAll()">🗑 Clear All</button>
+      <span id="selected-count" style="font-size:12px;color:var(--text-mid)">0 tests selected</span>
+    </div>
+    <div class="footer-right">
+      <button class="btn btn-primary" onclick="printReport()">🖨 Print</button>
+    </div>
+  </div>
+
+</div><!-- /app -->
+
+<!-- Calendar popup — fixed overlay, positioned via JS -->
+<div id="cal-popup" style="
+  display:none; position:fixed; z-index:9999;
+  background:white; border:1.5px solid var(--gray-border);
+  border-radius:12px; box-shadow:0 8px 28px rgba(0,0,0,0.18);
+  padding:14px; width:230px; user-select:none;
+">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+    <button onclick="calNav(-1)" style="border:none;background:none;cursor:pointer;font-size:18px;color:var(--blue-mid);padding:2px 8px;line-height:1;">&#8249;</button>
+    <span id="cal-month-label" style="font-size:13px;font-weight:700;color:var(--blue-dark);"></span>
+    <button onclick="calNav(1)"  style="border:none;background:none;cursor:pointer;font-size:18px;color:var(--blue-mid);padding:2px 8px;line-height:1;">&#8250;</button>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center;margin-bottom:4px;">
+    <span style="font-size:10px;font-weight:700;color:var(--gray-mid);padding:3px 0;">Su</span>
+    <span style="font-size:10px;font-weight:700;color:var(--gray-mid);padding:3px 0;">Mo</span>
+    <span style="font-size:10px;font-weight:700;color:var(--gray-mid);padding:3px 0;">Tu</span>
+    <span style="font-size:10px;font-weight:700;color:var(--gray-mid);padding:3px 0;">We</span>
+    <span style="font-size:10px;font-weight:700;color:var(--gray-mid);padding:3px 0;">Th</span>
+    <span style="font-size:10px;font-weight:700;color:var(--gray-mid);padding:3px 0;">Fr</span>
+    <span style="font-size:10px;font-weight:700;color:var(--gray-mid);padding:3px 0;">Sa</span>
+  </div>
+  <div id="cal-days" style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center;"></div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ── Test Definitions ─────────────────────────────────────────────────────────
+const TESTS = {
+  "haematology": [
+    {key:"Hb",           label:"Hb",           unit:"gm/dl",  ref:"12–18"},
+    {key:"TLC",          label:"TLC",          unit:"/cumm",  ref:"4000–11000"},
+    {key:"ESR",          label:"ESR",          unit:"mm/1hr", ref:"<20"},
+  ],
+  "dlc": [
+    {key:"Neutrophils",  label:"Neutrophils",  unit:"%",      ref:"40–70"},
+    {key:"Lymphocyte",   label:"Lymphocyte",   unit:"%",      ref:"20–40"},
+    {key:"Eosinophils",  label:"Eosinophils",  unit:"%",      ref:"01–06"},
+    {key:"Monocytes",    label:"Monocytes",    unit:"%",      ref:"02–10"},
+    {key:"Basophils",    label:"Basophils",    unit:"%",      ref:"0–1"},
+    {key:"Platelets",    label:"Platelets",    unit:"lakh",   ref:"1.5–04"},
+    {key:"ANC",          label:"ANC",          unit:"/cumm",  ref:"1800–7000"},
+    {key:"AEC",          label:"AEC",          unit:"/cumm",  ref:"40–450"},
+    {key:"TRBC",         label:"TRBC",         unit:"M/McL",  ref:"4.2–6.1"},
+    {key:"PCV",          label:"PCV",          unit:"%",      ref:"40–55"},
+    {key:"Bleeding Time",label:"Bleeding Time",unit:"mins",   ref:"1–5"},
+    {key:"Clotting Time",label:"Clotting Time",unit:"mins",   ref:"4–9"},
+    {key:"Blood Group",  label:"Blood Group",  unit:"Rh:",    ref:""},
+  ],
+  "urine": [
+    {key:"Pro/Alb", label:"Pro / Alb", unit:"", ref:"", options:["NIL","TRACE","+","++","+++","++++"]},
+    {key:"Sugar",   label:"Sugar",     unit:"", ref:"", options:["NIL","TRACE","+","++","+++","++++"]},
+  ],
+  "microscopic": [
+    {key:"Pus",          label:"Pus",          unit:"/hpf",   ref:""},
+    {key:"Epi",          label:"Epi",          unit:"/hpf",   ref:""},
+    {key:"RBC (Urine)",  label:"RBC",          unit:"/hpf",   ref:""},
+    {key:"Crystal",      label:"Crystal",      unit:"/hpf",   ref:""},
+    {key:"Cast",         label:"Cast",         unit:"/hpf",   ref:""},
+    {key:"Others (Urine)",label:"Others",      unit:"/hpf",   ref:""},
+  ],
+  "special-urine": [
+    {key:"Pregnancy Test",      label:"Pregnancy Test",     unit:"+ve/-ve", ref:""},
+    {key:"24hrs Urine Protein", label:"24hrs Urine Protein",unit:"",        ref:""},
+    {key:"24hrs Urine Output",  label:"24hrs Urine Output", unit:"",        ref:""},
+    {key:"HEV-IgM",             label:"HEV-IgM",            unit:"",        ref:""},
+    {key:"HBeAg",               label:"HBeAg",              unit:"",        ref:""},
+    {key:"HAV-IgM",             label:"HAV-IgM",            unit:"",        ref:""},
+    {key:"Urine AFB",           label:"Urine AFB",          unit:"",        ref:""},
+    {key:"Sputum AFB",          label:"Sputum AFB",         unit:"",        ref:""},
+  ],
+  "stool": [
+    {key:"Stool Occult Blood",  label:"Stool Occult Blood", unit:"", ref:""},
+    {key:"Stool RE",            label:"Stool RE",           unit:"", ref:""},
+    {key:"Gross",               label:"Gross",              unit:"", ref:""},
+  ],
+  "serology": [
+    {key:"H. Pylori",    label:"H. Pylori",    unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"HBsAg",        label:"HBsAg",        unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"ANTI HCV",     label:"ANTI HCV",     unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"Retro",        label:"Retro",        unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"Syphilis",     label:"Syphilis",     unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"BI.MP (Slide)",label:"BI.MP (Slide)",unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"BI.MP (ICT)",  label:"BI.MP (ICT)",  unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"Scrub Typhus", label:"Scrub Typhus", unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"Typhi IgG IgM",label:"Typhi IgG IgM",unit:"", ref:"", options:["Negative","Positive"]},
+  ],
+  "dengue": [
+    {key:"Dengue NslAg",   label:"NslAg",     unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"Dengue IgM/IgG", label:"IgM / IgG", unit:"", ref:"", options:["Negative","Positive"]},
+  ],
+  "widal": [
+    {key:"S. Typhi O",      label:"S. Typhi 'O'",      unit:"", ref:""},
+    {key:"S. Typhi H",      label:"S. Typhi 'H'",      unit:"", ref:""},
+    {key:"S. Paratyphi AH", label:"S. Paratyphi 'AH'", unit:"", ref:""},
+    {key:"S. Paratyphi BH", label:"S. Paratyphi 'BH'", unit:"", ref:""},
+  ],
+  "well-felix": [
+    {key:"OXK",  label:"OXK",  unit:"", ref:""},
+    {key:"OX2",  label:"OX2",  unit:"", ref:""},
+    {key:"OX19", label:"OX19", unit:"", ref:""},
+  ],
+  "quantitative": [
+    {key:"RA/RF",                  label:"RA/RF",                  unit:"IU/ml",  ref:"<20"},
+    {key:"ASO Adult",              label:"ASO Adult",              unit:"IU/ml",  ref:"Upto 200"},
+    {key:"ASO Children <5yrs",     label:"ASO Children <5 yrs",    unit:"IU/ml",  ref:"100"},
+    {key:"CRP Adult",              label:"CRP Adult",              unit:"mg/L",   ref:"Upto 6"},
+    {key:"CRP Infants & Children", label:"CRP Infants & Children", unit:"mg/L",   ref:"<2.8"},
+    {key:"CRP Newborn <3 weeks",   label:"CRP Newborn Upto 3 wks", unit:"mg/L",   ref:"<4.1"},
+  ],
+  "blood-sugar": [
+    {key:"Fasting", label:"Fasting", unit:"mg/dl", ref:"70–110"},
+    {key:"PP",      label:"PP",      unit:"mg/dl", ref:"Upto 150"},
+    {key:"RBS",     label:"RBS",     unit:"mg/dl", ref:"70–150"},
+  ],
+  "rft": [
+    {key:"Urea",       label:"Urea",       unit:"mg/dl", ref:"14–40"},
+    {key:"Creatinine", label:"Creatinine", unit:"mg/dl", ref:"0.2–1.4"},
+  ],
+  "lft": [
+    {key:"T. Bilirubin",  label:"T. Bilirubin",  unit:"mg/dl", ref:"0.1–1.0"},
+    {key:"D. Bilirubin",  label:"D. Bilirubin",  unit:"mg/dl", ref:"0–0.5"},
+    {key:"ID. Bilirubin", label:"ID. Bilirubin", unit:"mg/dl", ref:"0.1–0.7"},
+    {key:"SGOT (AST)",    label:"SGOT (AST)",    unit:"U/L",   ref:"5–40"},
+    {key:"SGPT (ALT)",    label:"SGPT (ALT)",    unit:"U/L",   ref:"5–45"},
+    {key:"T. Protein",    label:"T. Protein",    unit:"gm/dl", ref:"6–8"},
+    {key:"Albumin",       label:"Albumin",       unit:"gm/dl", ref:"3.2–5.5"},
+    {key:"Globulin",      label:"Globulin",      unit:"gm/dl", ref:"2.3–3.5"},
+  ],
+  "alkaphos": [
+    {key:"Alka. Phos M",          label:"M",                   unit:"U/L", ref:"53–128"},
+    {key:"Alka. Phos F",          label:"F",                   unit:"U/L", ref:"42–141"},
+    {key:"Alka. Phos Children",   label:"Children (1–14 yrs)", unit:"U/L", ref:"54–369"},
+  ],
+  "lipid": [
+    {key:"T. Cholesterol", label:"T. Cholesterol", unit:"mg/dl", ref:"Upto 200"},
+    {key:"Triglyceride",   label:"Triglyceride",   unit:"mg/dl", ref:"<160"},
+    {key:"HDL",            label:"HDL",            unit:"mg/dl", ref:"30–80"},
+    {key:"LDL",            label:"LDL",            unit:"mg/dl", ref:"<130"},
+    {key:"VLDL",           label:"VLDL",           unit:"mg/dl", ref:"7–30"},
+  ],
+  "electrolytes": [
+    {key:"Sodium (NA)",   label:"Sodium (NA)",   unit:"mmol/L", ref:"135–155"},
+    {key:"Potassium (K)", label:"Potassium (K)", unit:"mmol/L", ref:"3.5–5.5"},
+    {key:"Chloride",      label:"Chloride",      unit:"mg/dl",  ref:"97–107"},
+  ],
+  "biochemistry": [
+    {key:"S. Calcium",    label:"S. Calcium",    unit:"mg/L",   ref:"8.7–11.0"},
+    {key:"S. Uric Acid",  label:"S. Uric Acid",  unit:"",       ref:"M:3.5–7.2 / F:2.3–3.5"},
+    {key:"S. Amylase",    label:"S. Amylase",    unit:"IU/L",   ref:"<90"},
+    {key:"S. Lipase",     label:"S. Lipase",     unit:"IU/L",   ref:"<30"},
+  ],
+  "cardiac": [
+    {key:"CK-MB",      label:"CK – MB",      unit:"U/L", ref:"0–24"},
+    {key:"Troponin I", label:"Troponin 'I'", unit:"",    ref:"", options:["Negative","Positive"]},
+  ],
+  "tsh": [
+    {key:"TSH", label:"Thyroid Stimulating Hormone", unit:"uIU/mL",
+     refs:["New Born: 0.70–15.2","6 days–3 mths: 0.72–11.0","4–12 mths: 0.73–8.35",
+           "1–6 yrs: 0.70–5.97","7–11 yrs: 0.60–4.84","12–20 yrs: 0.51–4.30","Adult: 0.35–4.2"]},
+  ],
+  "t3t4": [
+    {key:"T3", label:"T3", unit:"nmol/l", refs:["1.23–3.07"]},
+    {key:"T4", label:"T4", unit:"nmol/L", refs:["66–181 nmol/L","5.1–14.1 Ug/dL"]},
+  ],
+  "vitd": [
+    {key:"Vit D", label:"Vit D", unit:"ng/mL",
+     refs:["Deficient: <20 ng/mL","Insufficient: 20–30 ng/mL","Sufficient: >30 ng/mL"]},
+  ],
+  "hba1c": [
+    {key:"HBA1C", label:"HBA1C", unit:"%",
+     refs:["Normal: <5.7%","Prediabetes: 5.7–6.4%","Diabetes: >6.5%"]},
+  ],
+};
+
+// ── Build test rows ───────────────────────────────────────────────────────────
+function buildSection(containerId, tests) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  tests.forEach(t => {
+    const div = document.createElement('div');
+    div.className = 'test-row';
+    div.dataset.key = t.key;
+
+    const refs = t.refs || (t.ref ? [t.ref] : []);
+    const refHtml = refs.length
+      ? `<div class="test-refs">${refs.join('<br>')}</div>`
+      : '';
+
+    const isNP  = t.options && t.options.length === 2
+               && t.options[0] === "Negative" && t.options[1] === "Positive";
+    const isSeg = t.options && !isNP;
+    let inputHtml;
+    if (isNP) {
+      const k = t.key;
+      inputHtml = `<div class="np-toggle" id="inp-${k}" data-value="">
+        <input type="radio" name="np-${k}" id="neg-${k}" value="Negative" onchange="npChange('${k}','Negative')">
+        <label for="neg-${k}">Negative</label>
+        <input type="radio" name="np-${k}" id="pos-${k}" value="Positive" onchange="npChange('${k}','Positive')">
+        <label for="pos-${k}">Positive</label>
+      </div>`;
+    } else if (isSeg) {
+      const k = t.key;
+      const opts = t.options.map((o, i) =>
+        `<input type="radio" name="seg-${k}" id="seg-${k}-${i}" value="${o}" onchange="segChange('${k}','${o}')">
+         <label for="seg-${k}-${i}">${o}</label>`
+      ).join('');
+      inputHtml = `<div class="seg-bar" id="inp-${k}" data-value="">${opts}</div>`;
+    } else {
+      inputHtml = `<input type="text" class="test-input" id="inp-${t.key}" disabled placeholder="—">`;
+    }
+
+    div.innerHTML = `
+      <input type="checkbox" id="cb-${t.key}" onchange="toggleTest(this)">
+      <label class="test-label" for="cb-${t.key}">${t.label}</label>
+      ${inputHtml}
+      <span class="test-unit">${t.unit}</span>
+      ${refHtml}
+    `;
+    container.appendChild(div);
+  });
+}
+
+// Build all sections on load
+Object.entries(TESTS).forEach(([id, tests]) => buildSection(`tests-${id}`, tests));
+
+// ── Toggle test ───────────────────────────────────────────────────────────────
+function toggleTest(cb) {
+  const key = cb.id.replace('cb-', '');
+  const inp = document.getElementById(`inp-${key}`);
+  const row = cb.closest('.test-row');
+  const isWidget = inp.classList.contains('np-toggle') || inp.classList.contains('seg-bar');
+  if (cb.checked) {
+    if (isWidget) {
+      inp.classList.add('enabled');
+    } else {
+      inp.disabled = false;
+      inp.classList.add('enabled');
+      inp.focus();
+    }
+    row.classList.add('checked');
+  } else {
+    if (isWidget) {
+      inp.classList.remove('enabled');
+      inp.dataset.value = '';
+      inp.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+    } else {
+      inp.disabled = true;
+      if (inp.tagName === 'SELECT') inp.selectedIndex = 0;
+      else inp.value = '';
+      inp.classList.remove('enabled');
+    }
+    row.classList.remove('checked');
+  }
+  updateBadges();
+  updateCount();
+}
+
+function npChange(key, value) {
+  const inp = document.getElementById(`inp-${key}`);
+  inp.dataset.value = value;
+}
+
+function segChange(key, value) {
+  const inp = document.getElementById(`inp-${key}`);
+  inp.dataset.value = value;
+}
+
+// ── Badges & count ────────────────────────────────────────────────────────────
+const SECTION_KEYS = {
+  "haematology": ["haematology","dlc"],
+  "urine":       ["urine","microscopic"],
+  "special-urine":["special-urine"],
+  "stool":       ["stool"],
+  "serology":    ["serology","dengue"],
+  "widal":       ["widal"],
+  "well-felix":  ["well-felix"],
+  "quantitative":["quantitative"],
+  "blood-sugar": ["blood-sugar"],
+  "rft":         ["rft"],
+  "lft":         ["lft","alkaphos"],
+  "lipid":       ["lipid"],
+  "electrolytes":["electrolytes"],
+  "biochemistry":["biochemistry"],
+  "cardiac":     ["cardiac"],
+  "tsh":         ["tsh","t3t4"],
+  "vitd":        ["vitd"],
+  "hba1c":       ["hba1c"],
+};
+
+function updateBadges() {
+  Object.entries(SECTION_KEYS).forEach(([section, groups]) => {
+    let count = 0;
+    groups.forEach(g => {
+      document.querySelectorAll(`#tests-${g} input[type=checkbox]:checked`).forEach(() => count++);
+    });
+    const badge = document.getElementById(`badge-${section}`);
+    if (badge) {
+      badge.textContent = count;
+      badge.classList.toggle('show', count > 0);
+    }
+  });
+}
+
+function updateCount() {
+  const total = document.querySelectorAll('input[type=checkbox]:checked').length;
+  document.getElementById('selected-count').textContent =
+    total === 0 ? '0 tests selected' : `${total} test${total>1?'s':''} selected`;
+}
+
+// ── Show section ──────────────────────────────────────────────────────────────
+function showSection(navEl) {
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+  navEl.classList.add('active');
+  const id = navEl.dataset.section;
+  const panel = document.getElementById(`panel-${id}`);
+  if (panel) panel.classList.add('active');
+}
+
+// ── IPD / OPD toggle ─────────────────────────────────────────────────────────
+let patientType = 'IPD';
+function setType(type) {
+  patientType = type;
+  document.getElementById('btn-ipd').classList.toggle('active', type === 'IPD');
+  document.getElementById('btn-opd').classList.toggle('active', type === 'OPD');
+  document.querySelectorAll('.ipd-only').forEach(el => {
+    el.style.display = type === 'IPD' ? '' : 'none';
+  });
+}
+
+
+function collectSections() {
+  const sections = {};
+  Object.entries(TESTS).forEach(([group, tests]) => {
+    const dict = {};
+    tests.forEach(t => {
+      const cb = document.getElementById(`cb-${t.key}`);
+      if (cb && cb.checked) {
+        const inp = document.getElementById(`inp-${t.key}`);
+        dict[t.key] = (inp.classList.contains('np-toggle') || inp.classList.contains('seg-bar'))
+          ? inp.dataset.value
+          : inp.value;
+      } else {
+        dict[t.key] = null;
+      }
+    });
+    sections[group] = Object.values(dict).some(v => v !== null) ? dict : null;
+  });
+  return sections;
+}
+
+function getPatient() {
+  const isIPD = patientType === 'IPD';
+  return {
+    name:    document.getElementById('pat-name').value,
+    age:     document.getElementById('pat-age').value,
+    sex:     document.getElementById('pat-gender').value,
+    address: document.getElementById('pat-address').value,
+    ward:    isIPD ? document.getElementById('pat-ward').value : '',
+    bed_no:  isIPD ? document.getElementById('pat-bed').value : '',
+    date:    document.getElementById('pat-date').value,
+    ref_no:  document.getElementById('ref-no').textContent,
+    type:    patientType,
+  };
+}
+
+// ── Print ─────────────────────────────────────────────────────────────────────
+async function printReport() {
+  const sections = collectSections();
+  const anySelected = Object.values(sections).some(v => v !== null);
+  if (!anySelected) { showToast('⚠️ No tests selected'); return; }
+  showToast('⏳ Generating PDF...');
+  const result = await pywebview.api.print_report(getPatient(), sections);
+  if (result.ok) showToast('✅ PDF opened');
+  else showToast('❌ Error: ' + result.error);
+}
+
+// ── Clear all ─────────────────────────────────────────────────────────────────
+function clearAll() {
+  document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+    if (cb.checked) { cb.checked = false; toggleTest(cb); }
+  });
+  document.getElementById('pat-name').value = '';
+  document.getElementById('age-num').value = '';
+  document.getElementById('age-sub').value = '';
+  document.getElementById('age-unit').selectedIndex = 0;
+  document.getElementById('age-sub').style.display = 'none';
+  document.getElementById('age-sub-label').style.display = 'none';
+  document.getElementById('pat-age').value = '';
+  document.getElementById('pat-address').value = '';
+  document.getElementById('pat-bed').value = '';
+  setType('IPD');
+  newRef();
+  showToast('🗑 Cleared');
+}
+
+// ── Ref no ────────────────────────────────────────────────────────────────────
+async function newRef() {
+  const ref = await pywebview.api.get_ref_no();
+  document.getElementById('ref-no').textContent = ref;
+}
+
+// ── Toast ─────────────────────────────────────────────────────────────────────
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ── Age builder ──────────────────────────────────────────────────────────────
+function buildAge() {
+  const num    = document.getElementById('age-num').value.trim();
+  const unit   = document.getElementById('age-unit').value;
+  const subInp = document.getElementById('age-sub');
+  const subLbl = document.getElementById('age-sub-label');
+  const hidden = document.getElementById('pat-age');
+
+  // Show sub-field and set its label based on unit
+  // Years  → show Months sub-field
+  // Months → show Days sub-field
+  // Days   → no sub-field
+  const showSub  = unit === 'Y' || unit === 'M';
+  const subLabel = unit === 'Y' ? 'M' : 'D';
+  subInp.placeholder = subLabel;
+  subInp.max         = unit === 'Y' ? 11 : 31;
+  subLbl.textContent = subLabel;
+  subInp.style.display = showSub ? '' : 'none';
+  subLbl.style.display = showSub ? '' : 'none';
+  if (!showSub) subInp.value = '';
+
+  if (!num) { hidden.value = ''; return; }
+
+  const unitLabel = unit === 'Y' ? 'Year' : unit === 'M' ? 'Month' : 'Day';
+  const plural    = Number(num) !== 1 ? 's' : '';
+  const sub       = subInp.value.trim();
+
+  if (showSub && sub && Number(sub) > 0) {
+    const subUnit = unit === 'Y' ? 'M' : 'D';
+    hidden.value = `${num}${unitLabel}${plural} (${sub}${subUnit})`;
+  } else {
+    hidden.value = `${num} ${unitLabel}${plural}`;
+  }
+}
+
+// ── Calendar ─────────────────────────────────────────────────────────────────
+let calDate = new Date();
+
+function toggleCal(anchor) {
+  const popup = document.getElementById('cal-popup');
+  if (popup.style.display === 'none') {
+    // Parse existing date if set
+    const cur = document.getElementById('pat-date').value;
+    if (cur) {
+      const [d, m, y] = cur.split('-').map(Number);
+      if (d && m && y) calDate = new Date(y, m - 1, d);
+    }
+    // Position popup below the input field
+    const rect = anchor.getBoundingClientRect();
+    popup.style.top  = (rect.bottom + 6) + 'px';
+    // Align to right edge of anchor so it doesn't go off-screen
+    let left = rect.left;
+    if (left + 230 > window.innerWidth) left = window.innerWidth - 238;
+    popup.style.left = left + 'px';
+    renderCal();
+    popup.style.display = 'block';
+  } else {
+    popup.style.display = 'none';
+  }
+}
+
+function calNav(dir) {
+  calDate.setMonth(calDate.getMonth() + dir);
+  renderCal();
+}
+
+function renderCal() {
+  const months = ['January','February','March','April','May','June',
+                  'July','August','September','October','November','December'];
+  const y = calDate.getFullYear(), m = calDate.getMonth();
+  document.getElementById('cal-month-label').textContent = `${months[m]} ${y}`;
+
+  const firstDay = new Date(y, m, 1).getDay();
+  const daysInMonth = new Date(y, m + 1, 0).getDate();
+  const today = new Date();
+
+  // Parse selected date
+  const cur = document.getElementById('pat-date').value;
+  let selD = 0, selM = -1, selY = 0;
+  if (cur) { const p = cur.split('-').map(Number); selD=p[0]; selM=p[1]-1; selY=p[2]; }
+
+  let html = '';
+  for (let i = 0; i < firstDay; i++) html += '<span></span>';
+  for (let d = 1; d <= daysInMonth; d++) {
+    const isToday   = d === today.getDate()    && m === today.getMonth()    && y === today.getFullYear();
+    const isSelected= d === selD && m === selM && y === selY;
+    let style = 'font-size:12px;padding:4px 2px;border-radius:6px;cursor:pointer;';
+    if (isSelected) style += 'background:var(--blue-dark);color:white;font-weight:700;';
+    else if (isToday) style += 'background:var(--blue-light);color:var(--blue-dark);font-weight:600;';
+    else style += 'color:var(--text-dark);';
+    html += `<span style="${style}" onclick="pickDay(${d})">${d}</span>`;
+  }
+  document.getElementById('cal-days').innerHTML = html;
+}
+
+function pickDay(d) {
+  const y = calDate.getFullYear(), m = calDate.getMonth();
+  const dd = String(d).padStart(2,'0');
+  const mm = String(m + 1).padStart(2,'0');
+  document.getElementById('pat-date').value = `${dd}-${mm}-${y}`;
+  document.getElementById('cal-popup').style.display = 'none';
+}
+
+// Close calendar when clicking outside
+document.addEventListener('click', e => {
+  const field = e.target.closest('.pat-field');
+  const popup = document.getElementById('cal-popup');
+  if (popup && popup.style.display !== 'none' && !field) {
+    popup.style.display = 'none';
+  }
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────────────
+window.addEventListener('pywebviewready', async () => {
+  const ref   = await pywebview.api.get_ref_no();
+  const today = await pywebview.api.get_today();
+  document.getElementById('ref-no').textContent = ref;
+  document.getElementById('pat-date').value = today;
+});
+</script>
+</body>
+</html>
