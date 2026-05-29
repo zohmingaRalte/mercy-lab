@@ -614,7 +614,22 @@ def _haematology(pdf, d):
         ("Clotting Time", "Clotting Time", "(4–9 mins)",              "Haematology"),
     ]:
         pdf.test_row(lbl, d.get(key,""), ref, indent=5, dash_x=dx_dlc)
-    pdf.test_row_pair("Blood Group", d.get("Blood Group",""), "Rh Factor", "", indent=5, dash_x=dx_dlc)
+    bg_raw = d.get("Blood Group", "")
+    try:
+        import json as _json
+        bg_data = _json.loads(bg_raw) if bg_raw else {}
+        bg_val = bg_data.get("bg", "") or ""
+        rh_val = bg_data.get("rh", "") or ""
+    except Exception:
+        # Fallback: old format "O +" split by space
+        parts = bg_raw.split() if bg_raw else []
+        bg_val = parts[0] if parts else ""
+        rh_val = parts[1] if len(parts) > 1 else ""
+    pdf.test_row_pair(
+        "Blood Group", bg_val if bg_val else None,
+        "RH",          rh_val if rh_val else None,
+        indent=5, dash_x=dx_dlc
+    )
 
 
 def _urine_stool(pdf, d):
@@ -872,6 +887,25 @@ def generate_pdf(patient, sections, technician, output_path, section_key=None):
     for sec_data in sections.values():
         if sec_data:
             all_data.update(sec_data)
+
+    # Parse Blood Group JSON into a display string with RH label
+    import json as _json
+    bg_raw = all_data.get("Blood Group", "")
+    if bg_raw and bg_raw.startswith("{"):
+        try:
+            bg_data = _json.loads(bg_raw)
+            bg_val = bg_data.get("bg", "") or ""
+            rh_val = bg_data.get("rh", "") or ""
+            if bg_val and rh_val:
+                all_data["Blood Group"] = f"{bg_val}    RH: {rh_val}"
+            elif bg_val:
+                all_data["Blood Group"] = bg_val
+            elif rh_val:
+                all_data["Blood Group"] = f"RH: {rh_val}"
+            else:
+                all_data["Blood Group"] = ""
+        except Exception:
+            pass
 
     from collections import OrderedDict
     groups = OrderedDict()

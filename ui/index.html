@@ -158,6 +158,30 @@ html, body { height: 100%; font-family: 'Segoe UI', system-ui, sans-serif; backg
   padding-bottom: 8px;
   display: flex; align-items: center; gap: 8px;
 }
+.bloodgroup-wrap {
+  display: flex; align-items: center; gap: 10px; flex: 1;
+}
+.bloodgroup-wrap select {
+  height: 32px; border: 1.5px solid var(--gray-border); border-radius: 6px;
+  padding: 0 8px; font-size: 13px; color: var(--text-dark);
+  background: #fff; cursor: pointer; min-width: 80px;
+}
+.bloodgroup-wrap select:disabled { background: var(--bg-soft); color: var(--text-mid); cursor: default; }
+.rh-label { font-size: 13px; font-weight: 600; color: var(--text-mid); white-space: nowrap; }
+.rh-toggle {
+  display: inline-flex; border: 1.5px solid var(--gray-border);
+  border-radius: 6px; overflow: hidden; pointer-events: none; opacity: 0.4;
+}
+.rh-toggle.enabled { pointer-events: all; opacity: 1; }
+.rh-toggle input[type="radio"] { display: none; }
+.rh-toggle label {
+  padding: 4px 14px; font-size: 13px; font-weight: 700;
+  cursor: pointer; background: #fff; color: var(--text-mid);
+  transition: background 0.15s, color 0.15s;
+}
+.rh-toggle label:first-of-type { border-right: 1.5px solid var(--gray-border); }
+.rh-toggle input[type="radio"]:checked + label { background: var(--blue-mid); color: #fff; }
+
 .select-all-wrap {
   display: flex; align-items: center; gap: 6px;
   font-size: 12px; font-weight: 500; color: var(--text-mid);
@@ -772,7 +796,7 @@ const TESTS = {
     {key:"PCV",          label:"PCV",          unit:"%",      ref:"40–55"},
     {key:"Bleeding Time",label:"Bleeding Time",unit:"mins",   ref:"1–5"},
     {key:"Clotting Time",label:"Clotting Time",unit:"mins",   ref:"4–9"},
-    {key:"Blood Group",  label:"Blood Group",  unit:"Rh:",    ref:""},
+    {key:"Blood Group",  label:"Blood Group",  type:"bloodgroup"},
   ],
   "urine": [
     {key:"Pro/Alb", label:"Pro / Alb", unit:"", ref:"", options:["NIL","TRACE","+","++","+++","++++"]},
@@ -914,11 +938,29 @@ function buildSection(containerId, tests) {
       ? `<div class="test-refs">${refs.join('<br>')}</div>`
       : '';
 
+    const isBloodGroup = t.type === 'bloodgroup';
     const isNP  = t.options && t.options.length === 2
                && t.options[0] === "Negative" && t.options[1] === "Positive";
     const isSeg = t.options && !isNP;
     let inputHtml;
-    if (isNP) {
+    if (isBloodGroup) {
+      inputHtml = `<div class="bloodgroup-wrap" id="inp-${t.key}">
+        <select id="bg-select" disabled onchange="bgChange()">
+          <option value="">—</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="O">O</option>
+          <option value="AB">AB</option>
+        </select>
+        <span class="rh-label">RH:</span>
+        <div class="rh-toggle" id="rh-toggle">
+          <input type="radio" name="rh" id="rh-pos" value="+" disabled>
+          <label for="rh-pos">+</label>
+          <input type="radio" name="rh" id="rh-neg" value="-" disabled>
+          <label for="rh-neg">−</label>
+        </div>
+      </div>`;
+    } else if (isNP) {
       const k = t.key;
       inputHtml = `<div class="np-toggle" id="inp-${k}" data-value="">
         <input type="radio" name="np-${k}" id="neg-${k}" value="Negative" onchange="npChange('${k}','Negative')">
@@ -941,7 +983,7 @@ function buildSection(containerId, tests) {
       <input type="checkbox" id="cb-${t.key}" onchange="toggleTest(this)">
       <label class="test-label" for="cb-${t.key}">${t.label}</label>
       ${inputHtml}
-      <span class="test-unit">${t.unit}</span>
+      <span class="test-unit">${t.unit || ''}</span>
       ${refHtml}
     `;
     container.appendChild(div);
@@ -957,8 +999,13 @@ function toggleTest(cb, noFocus) {
   const inp = document.getElementById(`inp-${key}`);
   const row = cb.closest('.test-row');
   const isWidget = inp.classList.contains('np-toggle') || inp.classList.contains('seg-bar');
+  const isBG = inp.classList.contains('bloodgroup-wrap');
   if (cb.checked) {
-    if (isWidget) {
+    if (isBG) {
+      inp.querySelector('select').disabled = false;
+      inp.querySelector('#rh-toggle').classList.add('enabled');
+      inp.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = false);
+    } else if (isWidget) {
       inp.classList.add('enabled');
     } else {
       inp.disabled = false;
@@ -967,7 +1014,12 @@ function toggleTest(cb, noFocus) {
     }
     row.classList.add('checked');
   } else {
-    if (isWidget) {
+    if (isBG) {
+      const sel = inp.querySelector('select');
+      sel.disabled = true; sel.selectedIndex = 0;
+      inp.querySelector('#rh-toggle').classList.remove('enabled');
+      inp.querySelectorAll('input[type="radio"]').forEach(r => { r.checked = false; r.disabled = true; });
+    } else if (isWidget) {
       inp.classList.remove('enabled');
       inp.dataset.value = '';
       inp.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
@@ -991,6 +1043,12 @@ function npChange(key, value) {
 function segChange(key, value) {
   const inp = document.getElementById(`inp-${key}`);
   inp.dataset.value = value;
+}
+
+function bgChange() {
+  // just triggers updateBadges/count if needed in future
+  updateBadges();
+  updateCount();
 }
 
 // ── Badges & count ────────────────────────────────────────────────────────────
@@ -1065,9 +1123,16 @@ function collectSections() {
       const cb = document.getElementById(`cb-${t.key}`);
       if (cb && cb.checked) {
         const inp = document.getElementById(`inp-${t.key}`);
-        dict[t.key] = (inp.classList.contains('np-toggle') || inp.classList.contains('seg-bar'))
-          ? inp.dataset.value
-          : inp.value;
+        if (inp.classList.contains('bloodgroup-wrap')) {
+          const bg = inp.querySelector('select').value;
+          const rhChecked = inp.querySelector('input[type="radio"]:checked');
+          const rh = rhChecked ? rhChecked.value : '';
+          dict[t.key] = JSON.stringify({ bg, rh });
+        } else {
+          dict[t.key] = (inp.classList.contains('np-toggle') || inp.classList.contains('seg-bar'))
+            ? inp.dataset.value
+            : inp.value;
+        }
       } else {
         dict[t.key] = null;
       }
