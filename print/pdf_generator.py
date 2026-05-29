@@ -754,7 +754,7 @@ def _electrolytes(pdf, d):
         ("Potassium (K)", "Potassium (K)", "3.5–5.5 mmol/L"),
         ("Chloride",      "Chloride",      "97–107 mg/dl"),
         ("S. Calcium",    "S. Calcium",    "8.7–11.0 mg/L"),
-        ("S. Uric Acid",  "S. Uric Acid",  "M:3.5–7.2 / F:2.3–3.5"),
+        ("S. Uric Acid",  "S. Uric Acid",  "M:3.5–7.2 / F:2.6–6.0"),
         ("S. Amylase",    "S. Amylase",    "<90 IU/L"),
         ("S. Lipase",     "S. Lipase",     "<30 IU/L"),
     ]:
@@ -854,7 +854,7 @@ TEST_REGISTRY = [
     ("Potassium (K)", "Potassium (K)",  "3.5–5.5 mmol/L",        "Serum Electrolytes"),
     ("Chloride",      "Chloride",       "97–107 mg/dl",          "Serum Electrolytes"),
     ("S. Calcium",    "S. Calcium",     "8.7–11.0 mg/L",         "Biochemistry"),
-    ("S. Uric Acid",  "S. Uric Acid",   "M:3.5–7.2 / F:2.3–3.5","Biochemistry"),
+    ("S. Uric Acid",  "S. Uric Acid",   "M:3.5–7.2 / F:2.6–6.0","Biochemistry"),
     ("S. Amylase",    "S. Amylase",     "<90 IU/L",              "Biochemistry"),
     ("S. Lipase",     "S. Lipase",      "<30 IU/L",              "Biochemistry"),
     ("CK-MB",         "CK — MB",        "0–24 U/L",              "Cardiac Profile"),
