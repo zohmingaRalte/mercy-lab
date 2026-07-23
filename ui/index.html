@@ -796,6 +796,8 @@ const TESTS = {
     {key:"PCV",          label:"PCV",          unit:"%",      ref:"40–55"},
     {key:"Bleeding Time",label:"Bleeding Time",unit:"mins",   ref:"1–5"},
     {key:"Clotting Time",label:"Clotting Time",unit:"mins",   ref:"4–9"},
+    {key:"PT",           label:"PT",           unit:"seconds",ref:"11–16"},
+    {key:"INR",          label:"INR",          unit:"",       ref:"0.64–1.17"},
     {key:"Blood Group",  label:"Blood Group",  type:"bloodgroup"},
   ],
   "urine": [
@@ -834,6 +836,7 @@ const TESTS = {
     {key:"BI.MP (Slide)",label:"BI.MP (Slide)",unit:"", ref:"", options:["Negative","Positive"]},
     {key:"BI.MP (ICT)",  label:"BI.MP (ICT)",  unit:"", ref:"", options:["Negative","Positive"]},
     {key:"Scrub Typhus", label:"Scrub Typhus", unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"Influenza",     label:"Influenza",     unit:"", ref:"", options:["Negative","Positive"]},
     {key:"Typhi IgG IgM",label:"Typhi IgG IgM",unit:"", ref:"", options:["Negative","Positive"]},
   ],
   "dengue": [
@@ -1308,10 +1311,11 @@ function pickDay(d) {
 
 // Close calendar when clicking outside
 document.addEventListener('click', e => {
-  const field = e.target.closest('.pat-field');
   const popup = document.getElementById('cal-popup');
-  if (popup && popup.style.display !== 'none' && !field) {
-    popup.style.display = 'none';
+  if (popup && popup.style.display !== 'none') {
+    if (!e.target.closest('.pat-field') && !e.target.closest('#cal-popup')) {
+      popup.style.display = 'none';
+    }
   }
 });
 

@@ -612,6 +612,8 @@ def _haematology(pdf, d):
         ("PCV",           "PCV",           "%(40–55)",                "Haematology"),
         ("Bleeding Time", "Bleeding Time", "(1–5 mins)",              "Haematology"),
         ("Clotting Time", "Clotting Time", "(4–9 mins)",              "Haematology"),
+        ("PT",            "PT",             "(11–16 seconds)",         "Haematology"),
+        ("INR",           "INR",            "(0.64–1.17)",             "Haematology"),
     ]:
         pdf.test_row(lbl, d.get(key,""), ref, indent=5, dash_x=dx_dlc)
     bg_raw = d.get("Blood Group", "")
@@ -677,6 +679,7 @@ def _serology(pdf, d):
         {'type':'row',  'label':'BI.MP (Slide)',   'value':R("BI.MP (Slide)"),  'ref':''},
         {'type':'row',  'label':'BI.MP (ICT)',     'value':R("BI.MP (ICT)"),    'ref':''},
         {'type':'row',  'label':'Scrub Typhus',    'value':R("Scrub Typhus"),   'ref':''},
+        {'type':'row',  'label':'Influenza',        'value':R("Influenza"),      'ref':''},
         {'type':'row',  'label':'Typhi IgG IgM',  'value':R("Typhi IgG IgM"), 'ref':''},
         {'type':'sub',  'label':'Dengue'},
         {'type':'row',  'label':'NslAg',           'value':R("Dengue NslAg"),   'ref':'', 'indent':4},
@@ -785,6 +788,8 @@ TEST_REGISTRY = [
     ("PCV",           "PCV",           "%(40–55)",               "Haematology|DLC"),
     ("Bleeding Time", "Bleeding Time", "(1–5 mins)",             "Haematology|DLC"),
     ("Clotting Time", "Clotting Time", "(4–9 mins)",             "Haematology|DLC"),
+    ("PT",            "PT",            "(11–16 seconds)",        "Haematology|DLC"),
+    ("INR",           "INR",           "(0.64–1.17)",            "Haematology|DLC"),
     ("Blood Group",   "Blood Group",   "",                       "Haematology|DLC"),
     ("Pro/Alb",            "Pro / Alb",          "",            "Urine"),
     ("Sugar",              "Sugar",               "",            "Urine"),
@@ -813,6 +818,7 @@ TEST_REGISTRY = [
     ("BI.MP (Slide)",      "BI.MP (Slide)",       "",            "Serology & Parasitology"),
     ("BI.MP (ICT)",        "BI.MP (ICT)",         "",            "Serology & Parasitology"),
     ("Scrub Typhus",       "Scrub Typhus",        "",            "Serology & Parasitology"),
+    ("Influenza",          "Influenza",           "",            "Serology & Parasitology"),
     ("Typhi IgG IgM",      "Typhi IgG IgM",      "",            "Serology & Parasitology"),
     ("Dengue NslAg",       "NslAg",               "",            "Serology & Parasitology|Dengue"),
     ("Dengue IgM/IgG",     "IgM / IgG",           "",            "Serology & Parasitology|Dengue"),
