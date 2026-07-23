@@ -1,0 +1,10 @@
+python -m PyInstaller --noconsole --onefile --name MercyLab ^
+  --add-data ui;ui ^
+  --add-data print;print ^
+  --add-data assets_logo.jpg;. ^
+  --add-data DejaVuSans.ttf;. ^
+  --add-data DejaVuSans-Bold.ttf;. ^
+  --add-data DejaVuSans-Oblique.ttf;. ^
+  --add-data DejaVuSans-BoldOblique.ttf;. ^
+  --add-data fontawesome.ttf;. ^
+  main_web.py
