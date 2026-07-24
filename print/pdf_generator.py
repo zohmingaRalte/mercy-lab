@@ -869,6 +869,9 @@ TEST_REGISTRY = [
     ("TSH",    "Thyroid Stimulating Hormone",  ["New Born: 0.70–15.2", "6d–3mths: 0.72–11.0", "4–12mths: 0.73–8.35", "1–6yrs: 0.70–5.97", "7–11yrs: 0.60–4.84", "12–20yrs: 0.51–4.30", "Adult: 0.35–4.2", "(Unit: uIU/mL)"], "Thyroid Stimulating Hormone", "uIU/mL"),
     ("T3",     "T3",                           ["1.23–3.07 (nmol/l)"],                                                                                                                                                                "Thyroid Stimulating Hormone|T3 & T4", "nmol/l"),
     ("T4",     "T4",                           ["66–181 nmol/L", "(5.1–14.1 Ug/dL)"],                                                                                                                                                 "Thyroid Stimulating Hormone|T3 & T4", "nmol/L"),
+    # Free T3 & Free T4
+    ("Free T3", "Free T3",                    ["3.1–6.8 pmol/l"],                                                                                                                                                                         "Thyroid Stimulating Hormone|Free T3 & Free T4", "pmol/l"),
+    ("Free T4", "Free T4",                    ["12–22 pmol/l"],                                                                                                                                                                            "Thyroid Stimulating Hormone|Free T3 & Free T4", "pmol/l"),
     # Vit D
     ("Vit D",  "Vit D",                        ["Deficient: <20 ng/mL", "Insufficient: 20–30 ng/mL", "Sufficient: >30 ng/mL"],                                                                                                        "Vit D", "ng/mL"),
     # HBA1C

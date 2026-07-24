@@ -712,6 +712,8 @@ body::-webkit-scrollbar { width: 6px; }
           <div id="tests-tsh"></div>
           <h3>T3 &amp; T4</h3>
           <div id="tests-t3t4"></div>
+          <h3>Free T3 &amp; Free T4</h3>
+          <div id="tests-free-t3t4"></div>
         </div>
       </div>
 
@@ -917,6 +919,10 @@ const TESTS = {
     {key:"T3", label:"T3", unit:"nmol/l", refs:["1.23–3.07"]},
     {key:"T4", label:"T4", unit:"nmol/L", refs:["66–181 nmol/L","5.1–14.1 Ug/dL"]},
   ],
+  "free-t3t4": [
+    {key:"Free T3", label:"Free T3", unit:"pmol/l", refs:["3.1–6.8"]},
+    {key:"Free T4", label:"Free T4", unit:"pmol/l", refs:["12–22"]},
+  ],
   "vitd": [
     {key:"Vit D", label:"Vit D", unit:"ng/mL",
      refs:["Deficient: <20 ng/mL","Insufficient: 20–30 ng/mL","Sufficient: >30 ng/mL"]},
@@ -1071,7 +1077,7 @@ const SECTION_KEYS = {
   "electrolytes":["electrolytes"],
   "biochemistry":["biochemistry"],
   "cardiac":     ["cardiac"],
-  "tsh":         ["tsh","t3t4"],
+  "tsh":         ["tsh","t3t4","free-t3t4"],
   "vitd":        ["vitd"],
   "hba1c":       ["hba1c"],
 };
