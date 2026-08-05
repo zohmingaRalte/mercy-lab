@@ -68,6 +68,358 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\util.py',
    'PYMODULE'),
+  ('threading',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\threading.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_threading_local.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\contextlib.py',
+   'PYMODULE'),
+  ('_strptime',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_strptime.py',
+   'PYMODULE'),
+  ('calendar',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\calendar.py',
+   'PYMODULE'),
+  ('argparse',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\argparse.py',
+   'PYMODULE'),
+  ('difflib',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\difflib.py',
+   'PYMODULE'),
+  ('textwrap',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\textwrap.py',
+   'PYMODULE'),
+  ('shutil',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\shutil.py',
+   'PYMODULE'),
+  ('zipfile',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\zipfile\\__init__.py',
+   'PYMODULE'),
+  ('zipfile._path',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\zipfile\\_path\\__init__.py',
+   'PYMODULE'),
+  ('zipfile._path.glob',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\zipfile\\_path\\glob.py',
+   'PYMODULE'),
+  ('pathlib',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\pathlib\\__init__.py',
+   'PYMODULE'),
+  ('urllib.error',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\error.py',
+   'PYMODULE'),
+  ('urllib',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\__init__.py',
+   'PYMODULE'),
+  ('urllib.response',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\response.py',
+   'PYMODULE'),
+  ('tempfile',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\tempfile.py',
+   'PYMODULE'),
+  ('urllib.request',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\request.py',
+   'PYMODULE'),
+  ('ipaddress',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\ipaddress.py',
+   'PYMODULE'),
+  ('ftplib',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\ftplib.py',
+   'PYMODULE'),
+  ('netrc',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\netrc.py',
+   'PYMODULE'),
+  ('mimetypes',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\mimetypes.py',
+   'PYMODULE'),
+  ('email.utils',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\utils.py',
+   'PYMODULE'),
+  ('email.charset',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\charset.py',
+   'PYMODULE'),
+  ('email.encoders',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\encoders.py',
+   'PYMODULE'),
+  ('quopri',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\quopri.py',
+   'PYMODULE'),
+  ('getopt',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\getopt.py',
+   'PYMODULE'),
+  ('email.errors',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\errors.py',
+   'PYMODULE'),
+  ('email.quoprimime',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\quoprimime.py',
+   'PYMODULE'),
+  ('email.base64mime',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\base64mime.py',
+   'PYMODULE'),
+  ('email._parseaddr',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\_parseaddr.py',
+   'PYMODULE'),
+  ('http.cookiejar',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\http\\cookiejar.py',
+   'PYMODULE'),
+  ('http',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\http\\__init__.py',
+   'PYMODULE'),
+  ('logging',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\pickle.py',
+   'PYMODULE'),
+  ('pprint',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\pprint.py',
+   'PYMODULE'),
+  ('dataclasses',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\dataclasses.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\typing.py',
+   'PYMODULE'),
+  ('annotationlib',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\annotationlib.py',
+   'PYMODULE'),
+  ('ast',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\ast.py',
+   'PYMODULE'),
+  ('_ast_unparse',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_ast_unparse.py',
+   'PYMODULE'),
+  ('inspect',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\inspect.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\token.py',
+   'PYMODULE'),
+  ('tokenize',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\tokenize.py',
+   'PYMODULE'),
+  ('importlib.machinery',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\machinery.py',
+   'PYMODULE'),
+  ('dis',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\dis.py',
+   'PYMODULE'),
+  ('opcode',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\opcode.py',
+   'PYMODULE'),
+  ('_opcode_metadata',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_opcode_metadata.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('ssl',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\ssl.py',
+   'PYMODULE'),
+  ('string',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\string\\__init__.py',
+   'PYMODULE'),
+  ('socket',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\socket.py',
+   'PYMODULE'),
+  ('selectors',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\selectors.py',
+   'PYMODULE'),
+  ('http.client',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\http\\client.py',
+   'PYMODULE'),
+  ('email.message',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\message.py',
+   'PYMODULE'),
+  ('email.policy',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\policy.py',
+   'PYMODULE'),
+  ('email.contentmanager',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\contentmanager.py',
+   'PYMODULE'),
+  ('email.headerregistry',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\headerregistry.py',
+   'PYMODULE'),
+  ('email._header_value_parser',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\_header_value_parser.py',
+   'PYMODULE'),
+  ('email.iterators',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\iterators.py',
+   'PYMODULE'),
+  ('email.generator',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\generator.py',
+   'PYMODULE'),
+  ('email._encoded_words',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\_encoded_words.py',
+   'PYMODULE'),
+  ('email._policybase',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\_policybase.py',
+   'PYMODULE'),
+  ('email.header',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\header.py',
+   'PYMODULE'),
+  ('email.parser',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\parser.py',
+   'PYMODULE'),
+  ('email.feedparser',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\feedparser.py',
+   'PYMODULE'),
+  ('hashlib',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\hashlib.py',
+   'PYMODULE'),
+  ('email',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\__init__.py',
+   'PYMODULE'),
+  ('bisect',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\bisect.py',
+   'PYMODULE'),
+  ('base64',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\base64.py',
+   'PYMODULE'),
+  ('urllib.parse',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\parse.py',
+   'PYMODULE'),
+  ('pathlib._os',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\pathlib\\_os.py',
+   'PYMODULE'),
+  ('glob',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\glob.py',
+   'PYMODULE'),
+  ('py_compile',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\py_compile.py',
+   'PYMODULE'),
+  ('struct',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\struct.py',
+   'PYMODULE'),
+  ('tarfile',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\tarfile.py',
+   'PYMODULE'),
+  ('gzip',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\gzip.py',
+   'PYMODULE'),
+  ('compression._common._streams',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\compression\\_common\\_streams.py',
+   'PYMODULE'),
+  ('compression._common',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\compression\\_common\\__init__.py',
+   'PYMODULE'),
+  ('compression.zstd',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\compression\\zstd\\__init__.py',
+   'PYMODULE'),
+  ('compression.zstd._zstdfile',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\compression\\zstd\\_zstdfile.py',
+   'PYMODULE'),
+  ('compression',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\compression\\__init__.py',
+   'PYMODULE'),
+  ('lzma',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\lzma.py',
+   'PYMODULE'),
+  ('bz2',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\bz2.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\fnmatch.py',
+   'PYMODULE'),
+  ('copy',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\copy.py',
+   'PYMODULE'),
+  ('gettext',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\gettext.py',
+   'PYMODULE'),
+  ('_colorize',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_colorize.py',
+   'PYMODULE'),
   ('importlib._bootstrap_external',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\_bootstrap_external.py',
@@ -88,166 +440,6 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\metadata\\_text.py',
    'PYMODULE'),
-  ('email.message',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\message.py',
-   'PYMODULE'),
-  ('email.policy',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\policy.py',
-   'PYMODULE'),
-  ('email.contentmanager',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\contentmanager.py',
-   'PYMODULE'),
-  ('email.quoprimime',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\quoprimime.py',
-   'PYMODULE'),
-  ('string',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\string\\__init__.py',
-   'PYMODULE'),
-  ('email.headerregistry',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\headerregistry.py',
-   'PYMODULE'),
-  ('email._header_value_parser',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\_header_value_parser.py',
-   'PYMODULE'),
-  ('urllib',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\__init__.py',
-   'PYMODULE'),
-  ('email.iterators',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\iterators.py',
-   'PYMODULE'),
-  ('email.generator',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\generator.py',
-   'PYMODULE'),
-  ('copy',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\copy.py',
-   'PYMODULE'),
-  ('_strptime',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_strptime.py',
-   'PYMODULE'),
-  ('calendar',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\calendar.py',
-   'PYMODULE'),
-  ('argparse',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\argparse.py',
-   'PYMODULE'),
-  ('difflib',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\difflib.py',
-   'PYMODULE'),
-  ('gettext',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\gettext.py',
-   'PYMODULE'),
-  ('struct',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\struct.py',
-   'PYMODULE'),
-  ('_colorize',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_colorize.py',
-   'PYMODULE'),
-  ('dataclasses',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\dataclasses.py',
-   'PYMODULE'),
-  ('annotationlib',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\annotationlib.py',
-   'PYMODULE'),
-  ('ast',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\ast.py',
-   'PYMODULE'),
-  ('_ast_unparse',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_ast_unparse.py',
-   'PYMODULE'),
-  ('email._encoded_words',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\_encoded_words.py',
-   'PYMODULE'),
-  ('base64',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\base64.py',
-   'PYMODULE'),
-  ('getopt',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\getopt.py',
-   'PYMODULE'),
-  ('email.charset',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\charset.py',
-   'PYMODULE'),
-  ('email.encoders',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\encoders.py',
-   'PYMODULE'),
-  ('email.base64mime',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\base64mime.py',
-   'PYMODULE'),
-  ('email._policybase',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\_policybase.py',
-   'PYMODULE'),
-  ('email.header',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\header.py',
-   'PYMODULE'),
-  ('email.errors',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\errors.py',
-   'PYMODULE'),
-  ('email.utils',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\utils.py',
-   'PYMODULE'),
-  ('socket',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\socket.py',
-   'PYMODULE'),
-  ('selectors',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\selectors.py',
-   'PYMODULE'),
-  ('email._parseaddr',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\_parseaddr.py',
-   'PYMODULE'),
-  ('urllib.parse',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\parse.py',
-   'PYMODULE'),
-  ('ipaddress',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\ipaddress.py',
-   'PYMODULE'),
-  ('quopri',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\quopri.py',
-   'PYMODULE'),
-  ('typing',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\typing.py',
-   'PYMODULE'),
-  ('contextlib',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\contextlib.py',
-   'PYMODULE'),
   ('importlib.metadata._itertools',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\metadata\\_itertools.py',
@@ -263,118 +455,6 @@
   ('importlib.metadata._meta',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\metadata\\_meta.py',
-   'PYMODULE'),
-  ('textwrap',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\textwrap.py',
-   'PYMODULE'),
-  ('zipfile',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\zipfile\\__init__.py',
-   'PYMODULE'),
-  ('zipfile._path',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\zipfile\\_path\\__init__.py',
-   'PYMODULE'),
-  ('zipfile._path.glob',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\zipfile\\_path\\glob.py',
-   'PYMODULE'),
-  ('py_compile',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\py_compile.py',
-   'PYMODULE'),
-  ('importlib.machinery',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\machinery.py',
-   'PYMODULE'),
-  ('compression.zstd',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\compression\\zstd\\__init__.py',
-   'PYMODULE'),
-  ('compression.zstd._zstdfile',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\compression\\zstd\\_zstdfile.py',
-   'PYMODULE'),
-  ('compression._common._streams',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\compression\\_common\\_streams.py',
-   'PYMODULE'),
-  ('compression._common',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\compression\\_common\\__init__.py',
-   'PYMODULE'),
-  ('compression',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\compression\\__init__.py',
-   'PYMODULE'),
-  ('lzma',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\lzma.py',
-   'PYMODULE'),
-  ('bz2',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\bz2.py',
-   'PYMODULE'),
-  ('pathlib',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\pathlib\\__init__.py',
-   'PYMODULE'),
-  ('urllib.error',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\error.py',
-   'PYMODULE'),
-  ('urllib.response',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\response.py',
-   'PYMODULE'),
-  ('tempfile',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\tempfile.py',
-   'PYMODULE'),
-  ('pathlib._os',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\pathlib\\_os.py',
-   'PYMODULE'),
-  ('glob',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\glob.py',
-   'PYMODULE'),
-  ('fnmatch',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\fnmatch.py',
-   'PYMODULE'),
-  ('inspect',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\inspect.py',
-   'PYMODULE'),
-  ('token',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\token.py',
-   'PYMODULE'),
-  ('dis',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\dis.py',
-   'PYMODULE'),
-  ('opcode',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\opcode.py',
-   'PYMODULE'),
-  ('_opcode_metadata',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_opcode_metadata.py',
-   'PYMODULE'),
-  ('email',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\__init__.py',
-   'PYMODULE'),
-  ('email.parser',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\parser.py',
-   'PYMODULE'),
-  ('email.feedparser',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\email\\feedparser.py',
    'PYMODULE'),
   ('__future__',
    'C:\\Users\\win 10 '
@@ -412,10 +492,6 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\resources\\_adapters.py',
    'PYMODULE'),
-  ('tokenize',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\tokenize.py',
-   'PYMODULE'),
   ('importlib._bootstrap',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\_bootstrap.py',
@@ -427,6 +503,10 @@
   ('importlib.abc',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('importlib',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\__init__.py',
    'PYMODULE'),
   ('setuptools',
    'C:\\Users\\win 10 '
@@ -455,22 +535,6 @@
   ('asyncio.log',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\asyncio\\log.py',
-   'PYMODULE'),
-  ('logging',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\logging\\__init__.py',
-   'PYMODULE'),
-  ('pickle',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\pickle.py',
-   'PYMODULE'),
-  ('pprint',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\pprint.py',
-   'PYMODULE'),
-  ('_compat_pickle',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_compat_pickle.py',
    'PYMODULE'),
   ('subprocess',
    'C:\\Users\\win 10 '
@@ -567,10 +631,6 @@
   ('multiprocessing.heap',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\multiprocessing\\heap.py',
-   'PYMODULE'),
-  ('bisect',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\bisect.py',
    'PYMODULE'),
   ('multiprocessing.resource_tracker',
    'C:\\Users\\win 10 '
@@ -703,10 +763,6 @@
   ('hmac',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\hmac.py',
-   'PYMODULE'),
-  ('hashlib',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\hashlib.py',
    'PYMODULE'),
   ('multiprocessing.reduction',
    'C:\\Users\\win 10 '
@@ -900,22 +956,6 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\http\\server.py',
    'PYMODULE'),
-  ('ssl',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\ssl.py',
-   'PYMODULE'),
-  ('http',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\http\\__init__.py',
-   'PYMODULE'),
-  ('mimetypes',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\mimetypes.py',
-   'PYMODULE'),
-  ('gzip',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\gzip.py',
-   'PYMODULE'),
   ('xml.parsers.expat',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\xml\\parsers\\expat.py',
@@ -951,10 +991,6 @@
   ('xml.sax.xmlreader',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\xml\\sax\\xmlreader.py',
-   'PYMODULE'),
-  ('http.client',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\http\\client.py',
    'PYMODULE'),
   ('decimal',
    'C:\\Users\\win 10 '
@@ -1187,10 +1223,6 @@
   ('setuptools._distutils.archive_util',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_distutils\\archive_util.py',
-   'PYMODULE'),
-  ('tarfile',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\tarfile.py',
    'PYMODULE'),
   ('setuptools._distutils.compilers.C.errors',
    'C:\\Users\\win 10 '
@@ -1724,10 +1756,6 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\_distutils_hack\\override.py',
    'PYMODULE'),
-  ('_py_abc',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_py_abc.py',
-   'PYMODULE'),
   ('_py_warnings',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_py_warnings.py',
@@ -1735,6 +1763,10 @@
   ('tracemalloc',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_py_abc.py',
    'PYMODULE'),
   ('stringprep',
    'C:\\Users\\win 10 '
@@ -3176,10 +3208,6 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\fpdf\\deprecation.py',
    'PYMODULE'),
-  ('importlib',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\importlib\\__init__.py',
-   'PYMODULE'),
   ('datetime',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\datetime.py',
@@ -3187,34 +3215,6 @@
   ('_pydatetime',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_pydatetime.py',
-   'PYMODULE'),
-  ('shutil',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\shutil.py',
-   'PYMODULE'),
-  ('urllib.request',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\request.py',
-   'PYMODULE'),
-  ('ftplib',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\ftplib.py',
-   'PYMODULE'),
-  ('netrc',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\netrc.py',
-   'PYMODULE'),
-  ('http.cookiejar',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\http\\cookiejar.py',
-   'PYMODULE'),
-  ('threading',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\threading.py',
-   'PYMODULE'),
-  ('_threading_local',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_threading_local.py',
    'PYMODULE'),
   ('random',
    'C:\\Users\\win 10 '
@@ -3700,17 +3700,9 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\lib\\runtimes\\win-x64\\native\\WebView2Loader.dll',
    'BINARY'),
-  ('webview\\lib\\WebBrowserInterop.x86.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\lib\\WebBrowserInterop.x86.dll',
-   'BINARY'),
   ('webview\\lib\\WebBrowserInterop.x64.dll',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\lib\\WebBrowserInterop.x64.dll',
-   'BINARY'),
-  ('webview\\lib\\runtimes\\win-x86\\native\\WebView2Loader.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\lib\\runtimes\\win-x86\\native\\WebView2Loader.dll',
    'BINARY'),
   ('webview\\lib\\runtimes\\win-arm64\\native\\WebView2Loader.dll',
    'C:\\Users\\win 10 '
@@ -3724,393 +3716,401 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\lib\\Microsoft.Web.WebView2.WinForms.dll',
    'BINARY'),
-  ('pythonnet\\runtime\\System.Runtime.dll',
+  ('webview\\lib\\runtimes\\win-x86\\native\\WebView2Loader.dll',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.dll',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\lib\\runtimes\\win-x86\\native\\WebView2Loader.dll',
    'BINARY'),
-  ('pythonnet\\runtime\\System.Collections.Concurrent.dll',
+  ('webview\\lib\\WebBrowserInterop.x86.dll',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Collections.Concurrent.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Collections.Specialized.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Collections.Specialized.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.ComponentModel.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.ComponentModel.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Diagnostics.FileVersionInfo.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.FileVersionInfo.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Security.SecureString.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.SecureString.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Diagnostics.TraceSource.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.TraceSource.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Reflection.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Reflection.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Runtime.Numerics.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Numerics.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.ValueTuple.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.ValueTuple.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Diagnostics.Tools.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.Tools.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Globalization.Calendars.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Globalization.Calendars.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Linq.Parallel.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Linq.Parallel.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Security.Cryptography.Primitives.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Cryptography.Primitives.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Resources.ResourceManager.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Resources.ResourceManager.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Diagnostics.Process.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.Process.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.IO.FileSystem.DriveInfo.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.FileSystem.DriveInfo.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Xml.ReaderWriter.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.ReaderWriter.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Globalization.Extensions.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Globalization.Extensions.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Runtime.InteropServices.RuntimeInformation.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.InteropServices.RuntimeInformation.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Text.Encoding.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Text.Encoding.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Net.NetworkInformation.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.NetworkInformation.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Text.Encoding.Extensions.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Text.Encoding.Extensions.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Resources.Writer.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Resources.Writer.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Threading.Timer.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.Timer.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Globalization.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Globalization.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Net.Sockets.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.Sockets.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Threading.ThreadPool.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.ThreadPool.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.IO.Compression.ZipFile.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.Compression.ZipFile.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Resources.Reader.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Resources.Reader.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Runtime.CompilerServices.VisualC.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.CompilerServices.VisualC.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Net.Security.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.Security.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Threading.Tasks.Parallel.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.Tasks.Parallel.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.IO.UnmanagedMemoryStream.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.UnmanagedMemoryStream.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Linq.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Linq.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Diagnostics.Contracts.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.Contracts.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Threading.Overlapped.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.Overlapped.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Security.Cryptography.Algorithms.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Cryptography.Algorithms.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.IO.MemoryMappedFiles.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.MemoryMappedFiles.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Dynamic.Runtime.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Dynamic.Runtime.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Runtime.InteropServices.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.InteropServices.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Collections.NonGeneric.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Collections.NonGeneric.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Runtime.Extensions.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Extensions.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Security.Cryptography.X509Certificates.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Cryptography.X509Certificates.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.AppContext.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.AppContext.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.IO.IsolatedStorage.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.IsolatedStorage.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Runtime.Serialization.Formatters.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Serialization.Formatters.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Net.Http.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.Http.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Reflection.Extensions.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Reflection.Extensions.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Console.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Console.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.IO.Compression.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.Compression.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Threading.Thread.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.Thread.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Xml.XDocument.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.XDocument.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Text.RegularExpressions.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Text.RegularExpressions.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.ObjectModel.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.ObjectModel.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Net.Primitives.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.Primitives.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.ComponentModel.EventBasedAsync.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.ComponentModel.EventBasedAsync.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\netstandard.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\netstandard.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Xml.XmlDocument.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.XmlDocument.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Net.NameResolution.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.NameResolution.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.IO.Pipes.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.Pipes.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Diagnostics.Tracing.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.Tracing.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Collections.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Collections.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Net.WebHeaderCollection.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.WebHeaderCollection.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Security.Cryptography.Csp.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Cryptography.Csp.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.IO.FileSystem.Primitives.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.FileSystem.Primitives.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Runtime.Serialization.Json.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Serialization.Json.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\Python.Runtime.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\Python.Runtime.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Threading.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Security.Cryptography.Encoding.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Cryptography.Encoding.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.ComponentModel.Primitives.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.ComponentModel.Primitives.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Linq.Queryable.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Linq.Queryable.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Runtime.Serialization.Xml.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Serialization.Xml.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Diagnostics.TextWriterTraceListener.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.TextWriterTraceListener.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.IO.FileSystem.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.FileSystem.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Data.Common.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Data.Common.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Threading.Tasks.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.Tasks.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Xml.XPath.XDocument.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.XPath.XDocument.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Xml.XmlSerializer.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.XmlSerializer.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Runtime.Serialization.Primitives.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Serialization.Primitives.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.IO.FileSystem.Watcher.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.FileSystem.Watcher.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Reflection.Primitives.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Reflection.Primitives.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.IO.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Net.WebSockets.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.WebSockets.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Net.WebSockets.Client.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.WebSockets.Client.dll',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\lib\\WebBrowserInterop.x86.dll',
    'BINARY'),
   ('pythonnet\\runtime\\System.Drawing.Primitives.dll',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Drawing.Primitives.dll',
    'BINARY'),
-  ('pythonnet\\runtime\\System.Diagnostics.Debug.dll',
+  ('pythonnet\\runtime\\System.Threading.dll',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.Debug.dll',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.dll',
    'BINARY'),
-  ('pythonnet\\runtime\\System.Diagnostics.StackTrace.dll',
+  ('pythonnet\\runtime\\System.IO.FileSystem.DriveInfo.dll',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.StackTrace.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\Microsoft.Win32.Primitives.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\Microsoft.Win32.Primitives.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Security.Principal.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Principal.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Runtime.Handles.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Handles.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Security.Claims.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Claims.dll',
-   'BINARY'),
-  ('pythonnet\\runtime\\System.Net.Requests.dll',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.Requests.dll',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.FileSystem.DriveInfo.dll',
    'BINARY'),
   ('pythonnet\\runtime\\System.Linq.Expressions.dll',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Linq.Expressions.dll',
    'BINARY'),
-  ('pythonnet\\runtime\\System.Xml.XPath.dll',
+  ('pythonnet\\runtime\\System.Net.WebHeaderCollection.dll',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.XPath.dll',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.WebHeaderCollection.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Threading.ThreadPool.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.ThreadPool.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Diagnostics.TraceSource.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.TraceSource.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Collections.Specialized.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Collections.Specialized.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\netstandard.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\netstandard.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.ComponentModel.EventBasedAsync.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.ComponentModel.EventBasedAsync.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Diagnostics.Tracing.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.Tracing.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Xml.XmlDocument.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.XmlDocument.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Resources.Writer.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Resources.Writer.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Net.NetworkInformation.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.NetworkInformation.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.IO.IsolatedStorage.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.IsolatedStorage.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Net.Security.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.Security.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Linq.Parallel.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Linq.Parallel.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Threading.Timer.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.Timer.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Resources.Reader.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Resources.Reader.dll',
    'BINARY'),
   ('pythonnet\\runtime\\System.Net.Ping.dll',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.Ping.dll',
    'BINARY'),
+  ('pythonnet\\runtime\\System.Net.Http.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.Http.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Security.Principal.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Principal.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Data.Common.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Data.Common.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Runtime.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Diagnostics.StackTrace.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.StackTrace.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.ObjectModel.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.ObjectModel.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Text.RegularExpressions.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Text.RegularExpressions.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Threading.Thread.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.Thread.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Runtime.InteropServices.RuntimeInformation.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.InteropServices.RuntimeInformation.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Globalization.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Globalization.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Collections.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Collections.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Threading.Tasks.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.Tasks.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.IO.Pipes.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.Pipes.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\Microsoft.Win32.Primitives.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\Microsoft.Win32.Primitives.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Net.Primitives.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.Primitives.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Security.Cryptography.Primitives.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Cryptography.Primitives.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Diagnostics.Contracts.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.Contracts.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Security.Cryptography.Encoding.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Cryptography.Encoding.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Globalization.Extensions.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Globalization.Extensions.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.ComponentModel.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.ComponentModel.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Net.NameResolution.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.NameResolution.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Resources.ResourceManager.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Resources.ResourceManager.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Runtime.InteropServices.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.InteropServices.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.IO.Compression.ZipFile.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.Compression.ZipFile.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.ValueTuple.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.ValueTuple.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Runtime.Handles.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Handles.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Security.Cryptography.X509Certificates.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Cryptography.X509Certificates.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Runtime.Serialization.Primitives.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Serialization.Primitives.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Xml.ReaderWriter.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.ReaderWriter.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Text.Encoding.Extensions.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Text.Encoding.Extensions.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Diagnostics.Debug.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.Debug.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Net.Requests.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.Requests.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Security.Cryptography.Algorithms.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Cryptography.Algorithms.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.IO.UnmanagedMemoryStream.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.UnmanagedMemoryStream.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Diagnostics.TextWriterTraceListener.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.TextWriterTraceListener.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Security.Claims.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Claims.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Collections.NonGeneric.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Collections.NonGeneric.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Threading.Overlapped.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.Overlapped.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Reflection.Extensions.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Reflection.Extensions.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.AppContext.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.AppContext.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Dynamic.Runtime.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Dynamic.Runtime.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.IO.Compression.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.Compression.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Reflection.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Reflection.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Net.WebSockets.Client.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.WebSockets.Client.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.IO.FileSystem.Primitives.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.FileSystem.Primitives.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Runtime.Serialization.Xml.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Serialization.Xml.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Runtime.CompilerServices.VisualC.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.CompilerServices.VisualC.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Runtime.Numerics.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Numerics.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Security.SecureString.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.SecureString.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.IO.FileSystem.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.FileSystem.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Threading.Tasks.Parallel.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Threading.Tasks.Parallel.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Reflection.Primitives.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Reflection.Primitives.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.ComponentModel.Primitives.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.ComponentModel.Primitives.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.IO.MemoryMappedFiles.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.MemoryMappedFiles.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Runtime.Serialization.Json.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Serialization.Json.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Globalization.Calendars.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Globalization.Calendars.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\Python.Runtime.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\Python.Runtime.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Collections.Concurrent.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Collections.Concurrent.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Diagnostics.Tools.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.Tools.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Xml.XDocument.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.XDocument.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Xml.XPath.XDocument.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.XPath.XDocument.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Diagnostics.FileVersionInfo.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.FileVersionInfo.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Runtime.Extensions.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Extensions.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.IO.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Linq.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Linq.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Linq.Queryable.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Linq.Queryable.dll',
+   'BINARY'),
   ('pythonnet\\runtime\\System.ComponentModel.TypeConverter.dll',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.ComponentModel.TypeConverter.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Xml.XPath.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.XPath.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.IO.FileSystem.Watcher.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.IO.FileSystem.Watcher.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Xml.XmlSerializer.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Xml.XmlSerializer.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Net.Sockets.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.Sockets.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Console.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Console.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Diagnostics.Process.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Diagnostics.Process.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Runtime.Serialization.Formatters.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Runtime.Serialization.Formatters.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Security.Cryptography.Csp.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Security.Cryptography.Csp.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Net.WebSockets.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Net.WebSockets.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\System.Text.Encoding.dll',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\System.Text.Encoding.dll',
    'BINARY'),
   ('python314.dll',
    'C:\\Users\\win 10 '
@@ -4124,6 +4124,10 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\clr_loader\\ffi\\dlls\\x86\\ClrLoader.dll',
    'BINARY'),
+  ('_ssl.pyd',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\_ssl.pyd',
+   'EXTENSION'),
   ('select.pyd',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\select.pyd',
@@ -4131,6 +4135,10 @@
   ('_socket.pyd',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('_hashlib.pyd',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\_hashlib.pyd',
    'EXTENSION'),
   ('unicodedata.pyd',
    'C:\\Users\\win 10 '
@@ -4164,17 +4172,9 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\_ctypes.pyd',
    'EXTENSION'),
-  ('_hashlib.pyd',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\_hashlib.pyd',
-   'EXTENSION'),
   ('_multiprocessing.pyd',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\_multiprocessing.pyd',
-   'EXTENSION'),
-  ('_ssl.pyd',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\_ssl.pyd',
    'EXTENSION'),
   ('pyexpat.pyd',
    'C:\\Users\\win 10 '
@@ -4240,17 +4240,17 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\VCRUNTIME140.dll',
    'BINARY'),
-  ('libffi-8.dll',
+  ('libssl-3.dll',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\libffi-8.dll',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\libssl-3.dll',
    'BINARY'),
   ('libcrypto-3.dll',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\libcrypto-3.dll',
    'BINARY'),
-  ('libssl-3.dll',
+  ('libffi-8.dll',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\libssl-3.dll',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\DLLs\\libffi-8.dll',
    'BINARY'),
   ('VCRUNTIME140_1.dll',
    'C:\\Users\\win 10 '
@@ -4279,21 +4279,9 @@
    'F:\\MercyLab_source\\print\\pdf_generator.py',
    'DATA'),
   ('ui\\index.html', 'F:\\MercyLab_source\\ui\\index.html', 'DATA'),
-  ('webview\\js\\state.js',
+  ('webview\\js\\lib\\dom_json.js',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\js\\state.js',
-   'DATA'),
-  ('webview\\js\\customize.js',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\js\\customize.js',
-   'DATA'),
-  ('webview\\js\\finish.js',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\js\\finish.js',
-   'DATA'),
-  ('webview\\js\\api.js',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\js\\api.js',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\js\\lib\\dom_json.js',
    'DATA'),
   ('webview\\lib\\pywebview-android.jar',
    'C:\\Users\\win 10 '
@@ -4303,54 +4291,74 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\js\\lib\\polyfill.js',
    'DATA'),
-  ('webview\\js\\lib\\dom_json.js',
+  ('webview\\js\\customize.js',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\js\\lib\\dom_json.js',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\js\\customize.js',
    'DATA'),
-  ('pythonnet\\runtime\\Python.Runtime.deps.json',
+  ('webview\\js\\api.js',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\Python.Runtime.deps.json',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\js\\api.js',
+   'DATA'),
+  ('webview\\js\\finish.js',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\js\\finish.js',
+   'DATA'),
+  ('webview\\js\\state.js',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\webview\\js\\state.js',
    'DATA'),
   ('pythonnet\\runtime\\Python.Runtime.xml',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\Python.Runtime.xml',
    'DATA'),
-  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\RECORD',
+  ('pythonnet\\runtime\\Python.Runtime.deps.json',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\RECORD',
-   'DATA'),
-  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\INSTALLER',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\INSTALLER',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pythonnet\\runtime\\Python.Runtime.deps.json',
    'DATA'),
   ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\top_level.txt',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\top_level.txt',
    'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\METADATA',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\METADATA',
+   'DATA'),
   ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\WHEEL',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\WHEEL',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\RECORD',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\RECORD',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\REQUESTED',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\REQUESTED',
    'DATA'),
   ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\licenses\\LICENSE',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\licenses\\LICENSE',
    'DATA'),
-  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\METADATA',
+  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\INSTALLER',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\METADATA',
-   'DATA'),
-  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\REQUESTED',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\REQUESTED',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\INSTALLER',
    'DATA'),
   ('setuptools\\_vendor\\jaraco\\text\\Lorem ipsum.txt',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\setuptools\\_vendor\\jaraco\\text\\Lorem '
    'ipsum.txt',
    'DATA'),
+  ('markupsafe-3.0.3.dist-info\\top_level.txt',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\top_level.txt',
+   'DATA'),
   ('markupsafe-3.0.3.dist-info\\INSTALLER',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\INSTALLER',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\METADATA',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\METADATA',
    'DATA'),
   ('markupsafe-3.0.3.dist-info\\RECORD',
    'C:\\Users\\win 10 '
@@ -4360,14 +4368,6 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\licenses\\LICENSE.txt',
    'DATA'),
-  ('markupsafe-3.0.3.dist-info\\METADATA',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\METADATA',
-   'DATA'),
-  ('markupsafe-3.0.3.dist-info\\top_level.txt',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\top_level.txt',
-   'DATA'),
   ('markupsafe-3.0.3.dist-info\\WHEEL',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\WHEEL',
@@ -4375,77 +4375,17 @@
   ('base_library.zip',
    'F:\\MercyLab_source\\build\\MercyLab\\base_library.zip',
    'DATA')],
- [('posixpath',
+ [('genericpath',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\posixpath.py',
-   'PYMODULE'),
-  ('codecs',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\codecs.py',
-   'PYMODULE'),
-  ('copyreg',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\copyreg.py',
-   'PYMODULE'),
-  ('sre_parse',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\sre_parse.py',
-   'PYMODULE'),
-  ('weakref',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\weakref.py',
-   'PYMODULE'),
-  ('linecache',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\linecache.py',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\genericpath.py',
    'PYMODULE'),
   ('stat',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\stat.py',
    'PYMODULE'),
-  ('functools',
+  ('warnings',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\functools.py',
-   'PYMODULE'),
-  ('reprlib',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\reprlib.py',
-   'PYMODULE'),
-  ('locale',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\locale.py',
-   'PYMODULE'),
-  ('sre_constants',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\sre_constants.py',
-   'PYMODULE'),
-  ('re._parser',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\re\\_parser.py',
-   'PYMODULE'),
-  ('re._constants',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\re\\_constants.py',
-   'PYMODULE'),
-  ('re._compiler',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\re\\_compiler.py',
-   'PYMODULE'),
-  ('re._casefix',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\re\\_casefix.py',
-   'PYMODULE'),
-  ('re',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\re\\__init__.py',
-   'PYMODULE'),
-  ('sre_compile',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\sre_compile.py',
-   'PYMODULE'),
-  ('operator',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\operator.py',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\warnings.py',
    'PYMODULE'),
   ('keyword',
    'C:\\Users\\win 10 '
@@ -4455,17 +4395,49 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\abc.py',
    'PYMODULE'),
-  ('collections',
+  ('codecs',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\collections\\__init__.py',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\codecs.py',
    'PYMODULE'),
-  ('types',
+  ('operator',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\types.py',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\operator.py',
    'PYMODULE'),
   ('ntpath',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\ntpath.py',
+   'PYMODULE'),
+  ('sre_compile',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\sre_compile.py',
+   'PYMODULE'),
+  ('_weakrefset',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_weakrefset.py',
+   'PYMODULE'),
+  ('linecache',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\linecache.py',
+   'PYMODULE'),
+  ('reprlib',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\reprlib.py',
+   'PYMODULE'),
+  ('sre_constants',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\sre_constants.py',
+   'PYMODULE'),
+  ('posixpath',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\posixpath.py',
+   'PYMODULE'),
+  ('heapq',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\heapq.py',
+   'PYMODULE'),
+  ('_collections_abc',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_collections_abc.py',
    'PYMODULE'),
   ('traceback',
    'C:\\Users\\win 10 '
@@ -4475,17 +4447,25 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\io.py',
    'PYMODULE'),
-  ('heapq',
+  ('locale',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\heapq.py',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\locale.py',
    'PYMODULE'),
-  ('warnings',
+  ('sre_parse',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\warnings.py',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\sre_parse.py',
    'PYMODULE'),
-  ('_collections_abc',
+  ('weakref',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_collections_abc.py',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\weakref.py',
+   'PYMODULE'),
+  ('functools',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\functools.py',
+   'PYMODULE'),
+  ('types',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\types.py',
    'PYMODULE'),
   ('encodings.zlib_codec',
    'C:\\Users\\win 10 '
@@ -4979,17 +4959,37 @@
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\encodings\\__init__.py',
    'PYMODULE'),
-  ('genericpath',
+  ('collections',
    'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\genericpath.py',
-   'PYMODULE'),
-  ('_weakrefset',
-   'C:\\Users\\win 10 '
-   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\_weakrefset.py',
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\collections\\__init__.py',
    'PYMODULE'),
   ('enum',
    'C:\\Users\\win 10 '
    'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\enum.py',
+   'PYMODULE'),
+  ('copyreg',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\copyreg.py',
+   'PYMODULE'),
+  ('re._parser',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\re\\_parser.py',
+   'PYMODULE'),
+  ('re._constants',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\re\\_constants.py',
+   'PYMODULE'),
+  ('re._compiler',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\re\\_compiler.py',
+   'PYMODULE'),
+  ('re._casefix',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\re\\_casefix.py',
+   'PYMODULE'),
+  ('re',
+   'C:\\Users\\win 10 '
+   'mbr\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\re\\__init__.py',
    'PYMODULE'),
   ('os',
    'C:\\Users\\win 10 '
