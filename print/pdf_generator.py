@@ -749,7 +749,7 @@ def _biochemistry(pdf, d):
 def _electrolytes(pdf, d):
     pdf.section_title("Electrolytes & Cardiac")
     pdf.sub_section("Serum Electrolyte")
-    el_labels = ["Sodium (NA)","Potassium (K)","Chloride","Ionized Calcium","S. Calcium",
+    el_labels = ["Sodium (NA)","Potassium (K)","Chloride","S. Calcium",
                  "S. Uric Acid","S. Amylase","S. Lipase"]
     dx_el = pdf.dash_col(el_labels, indent=5)
     for lbl, key, ref in [
@@ -859,7 +859,6 @@ TEST_REGISTRY = [
     ("Sodium (NA)",   "Sodium (NA)",    "135–155 mmol/L",        "Serum Electrolytes"),
     ("Potassium (K)", "Potassium (K)",  "3.5–5.5 mmol/L",        "Serum Electrolytes"),
     ("Chloride",      "Chloride",       "97–107 mg/dl",          "Serum Electrolytes"),
-    ("Ionized Calcium","Ionized Calcium", "1.15–1.33 mmol/L",      "Serum Electrolytes"),
     ("Ionized Calcium","Ionized Calcium", "1.15–1.33 mmol/L",      "Serum Electrolytes"),
     ("S. Calcium",    "S. Calcium",     "8.7–11.0 mg/L",         "Biochemistry"),
     ("S. Uric Acid",  "S. Uric Acid",   "M:3.5–7.2 / F:2.6–6.0","Biochemistry"),
