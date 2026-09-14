@@ -21,6 +21,7 @@ FONT_BOLD        = os.path.join(BASE_DIR, "DejaVuSans-Bold.ttf")
 FONT_ITALIC      = os.path.join(BASE_DIR, "DejaVuSans-Oblique.ttf")
 FONT_BOLD_ITALIC = os.path.join(BASE_DIR, "DejaVuSans-BoldOblique.ttf")
 FONT_AWESOME     = os.path.join(BASE_DIR, "fontawesome.ttf")
+SIGNATURE_PATH   = os.path.join(BASE_DIR, "signature.jpg")
 
 # Palette
 BLUE      = (25, 105, 210)
@@ -369,13 +370,11 @@ class LabReport(FPDF):
         lx = x + RC_P + indent
         self.set_xy(lx, y + 0.5)
         self.set_font("DJ", "", 9.5); self.c(T1)
-        if dash_x is None:
-            dash_x = lx + self.get_string_width(label) + 3
-        # Clamp label so it never overruns the dash position
-        label_cell_w = min(self.get_string_width(label) + 1, dash_x - lx - 1)
-        self.cell(label_cell_w, line_h, label)
+        self.cell(self.get_string_width(label), line_h, label)
 
         # Em dash
+        if dash_x is None:
+            dash_x = lx + self.get_string_width(label) + 3
         self.set_xy(dash_x, y + 0.5)
         self.set_font("DJ", "", 9.5); self.c(T1)
         self.cell(6, line_h, "—")
@@ -564,6 +563,15 @@ class LabReport(FPDF):
     def signature_line(self):
         sy = PH - 15
         x1 = RC_X + RC_W - 74
+        sig_w = 40   # signature image width in mm
+        sig_h = 14   # signature image height in mm
+        sig_x = x1 + (74 - sig_w) / 2
+        sig_y = sy - sig_h - 1
+
+        # Draw signature image if available
+        if os.path.exists(SIGNATURE_PATH):
+            self.image(SIGNATURE_PATH, x=sig_x, y=sig_y, w=sig_w, h=sig_h)
+
         self.d(GR5); self.set_line_width(0.35)
         self.line(x1, sy, RC_X + RC_W, sy)
         self.set_xy(x1, sy + 2.5)
@@ -869,7 +877,7 @@ TEST_REGISTRY = [
     ("CK-MB",         "CK — MB",        "0–24 U/L",              "Cardiac Profile"),
     ("Troponin I",    "Troponin 'I'",   "",                      "Cardiac Profile"),
     # Thyroid
-    ("TSH",    "TSH",                          ["New Born: 0.70–15.2", "6d–3mths: 0.72–11.0", "4–12mths: 0.73–8.35", "1–6yrs: 0.70–5.97", "7–11yrs: 0.60–4.84", "12–20yrs: 0.51–4.30", "Adult: 0.35–4.2", "(Unit: uIU/mL)"], "Thyroid Stimulating Hormone", "uIU/mL"),
+    ("TSH",    "TSH",                           ["New Born: 0.70–15.2", "6d–3mths: 0.72–11.0", "4–12mths: 0.73–8.35", "1–6yrs: 0.70–5.97", "7–11yrs: 0.60–4.84", "12–20yrs: 0.51–4.30", "Adult: 0.35–4.2", "(Unit: uIU/mL)"], "Thyroid Stimulating Hormone", "uIU/mL"),
     ("T3",     "T3",                           ["1.23–3.07 (nmol/l)"],                                                                                                                                                                "Thyroid Stimulating Hormone|T3 & T4", "nmol/l"),
     ("T4",     "T4",                           ["66–181 nmol/L", "(5.1–14.1 Ug/dL)"],                                                                                                                                                 "Thyroid Stimulating Hormone|T3 & T4", "nmol/L"),
     ("Free T3","Free T3",                      ["3.1–6.8 pmol/L"],                                                                                                                                                                    "Thyroid Stimulating Hormone|Free T3 & Free T4", "pmol/L"),
@@ -918,7 +926,6 @@ def generate_pdf(patient, sections, technician, output_path, section_key=None):
         except Exception:
             pass
 
-    # Parse Influenza JSON into display string
     import json as _json2
     inf_raw = all_data.get("Influenza", "")
     if inf_raw and inf_raw.startswith("{"):
@@ -936,7 +943,6 @@ def generate_pdf(patient, sections, technician, output_path, section_key=None):
                 all_data["Influenza"] = ""
         except Exception:
             pass
-
     from collections import OrderedDict
     groups = OrderedDict()
     for entry in TEST_REGISTRY:
@@ -1022,8 +1028,8 @@ def generate_pdf(patient, sections, technician, output_path, section_key=None):
             if not labels: return x_off + RC_P + 20
             pdf.set_font("DJ", "", 9.5)
             max_lbl_w = max(pdf.get_string_width(l) for l in labels)
-            # Cap dash_x so it never exceeds 38% of col width from col start
-            max_allowed = TC_W * 0.38
+            # Cap dash_x so it never exceeds 45% of col width from col start
+            max_allowed = TC_W * 0.45
             return x_off + RC_P + min(max_lbl_w, max_allowed) + 4
 
         # ── Two-col page-aware renderer ───────────────────────────────────────
@@ -1072,11 +1078,7 @@ def generate_pdf(patient, sections, technician, output_path, section_key=None):
                         break
                     pdf.set_xy(x_off, y)
                     if isinstance(ref, list):
-                        # For multiref, cap dash_x tighter so long labels don't eat value space
-                        pdf.set_font("DJ", "", 9.5)
-                        lbl_w = pdf.get_string_width(label)
-                        row_dx = x_off + RC_P + min(lbl_w, col_w * 0.32) + 4
-                        pdf.test_row_multiref(label, value, ref, dash_x=row_dx, x=x_off, col_w=col_w)
+                        pdf.test_row_multiref(label, value, ref, dash_x=dx, x=x_off, col_w=col_w)
                     else:
                         pdf.test_row(label, value, ref, dash_x=dx, x=x_off, col_w=col_w)
                     y = pdf.get_y()
