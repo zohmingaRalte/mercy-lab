@@ -5,7 +5,7 @@ a = Analysis(
     ['main_web.py'],
     pathex=[],
     binaries=[],
-    datas=[('ui', 'ui'), ('print', 'print'), ('assets_logo.jpg', '.'), ('DejaVuSans.ttf', '.'), ('DejaVuSans-Bold.ttf', '.'), ('DejaVuSans-Oblique.ttf', '.'), ('DejaVuSans-BoldOblique.ttf', '.'), ('fontawesome.ttf', '.')],
+    datas=[('ui', 'ui'), ('print', 'print'), ('assets_logo.jpg', '.'), ('signature.jpg', '.'), ('DejaVuSans.ttf', '.'), ('DejaVuSans-Bold.ttf', '.'), ('DejaVuSans-Oblique.ttf', '.'), ('DejaVuSans-BoldOblique.ttf', '.'), ('fontawesome.ttf', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

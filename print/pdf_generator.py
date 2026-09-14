@@ -395,6 +395,41 @@ class LabReport(FPDF):
 
         self.set_y(y + rh)
 
+    def test_row_wrap(self, label, value, ref="", indent=0, dash_x=None, x=None, col_w=None):
+        """Like test_row but value wraps onto next line if too long."""
+        if value is None:
+            return
+        if x is None: x = RC_X
+        if col_w is None: col_w = RC_W
+        line_h = 5.0
+        parts = [p.strip() for p in (str(value) if value else "").split(",")]
+        n_lines = max(1, len(parts))
+        y = self.get_y()
+        lx = x + RC_P + indent
+        self.set_font("DJ", "", 9.5); self.c(T1)
+        if dash_x is None:
+            dash_x = lx + self.get_string_width(label) + 3
+        # Label — clamped
+        self.set_xy(lx, y + 0.5)
+        label_cell_w = min(self.get_string_width(label) + 1, dash_x - lx - 1)
+        self.cell(label_cell_w, line_h, label)
+        # Em dash
+        self.set_xy(dash_x, y + 0.5)
+        self.cell(6, line_h, "—")
+        # Value — split at commas so each phrase prints on its own line
+        val_x = dash_x + 7
+        val_w = (x + col_w) - val_x - 2
+        if val_w < 10: val_w = 30  # safety fallback
+        val_str = str(value) if value else ""
+        # Split at ", " so breaks always happen after commas
+        parts = [p.strip() for p in val_str.split(",")]
+        self.set_font("DJ", "", 9.5); self.c(T1)
+        for i, part in enumerate(parts):
+            line = part if i == len(parts) - 1 else part + ","
+            self.set_xy(val_x, y + 0.5 + i * line_h)
+            self.cell(val_w, line_h, line)
+        self.set_y(y + n_lines * line_h)
+
     def test_row_pair(self, l1, v1, l2, v2, indent=0, dash_x=None):
         if v1 is None and v2 is None:
             return
@@ -563,15 +598,11 @@ class LabReport(FPDF):
     def signature_line(self):
         sy = PH - 15
         x1 = RC_X + RC_W - 74
-        sig_w = 40   # signature image width in mm
-        sig_h = 14   # signature image height in mm
+        sig_w = 40; sig_h = 14
         sig_x = x1 + (74 - sig_w) / 2
         sig_y = sy - sig_h - 1
-
-        # Draw signature image if available
         if os.path.exists(SIGNATURE_PATH):
             self.image(SIGNATURE_PATH, x=sig_x, y=sig_y, w=sig_w, h=sig_h)
-
         self.d(GR5); self.set_line_width(0.35)
         self.line(x1, sy, RC_X + RC_W, sy)
         self.set_xy(x1, sy + 2.5)
@@ -652,7 +683,10 @@ def _urine_stool(pdf, d):
     dx_mic = pdf.dash_col(mic_labels, indent=5)
     for lbl, key in [("Pus","Pus"),("Epi","Epi"),("RBC","RBC (Urine)"),
                      ("Crystal","Crystal"),("Cast","Cast"),("Others","Others (Urine)")]:
-        pdf.test_row(lbl, d.get(key,""), "/hpf", indent=5, dash_x=dx_mic)
+        if key == "Others (Urine)":
+            pdf.test_row_wrap(lbl, d.get(key,""), "", indent=5, dash_x=dx_mic)
+        else:
+            pdf.test_row(lbl, d.get(key,""), "/hpf", indent=5, dash_x=dx_mic)
     pdf.sub_section("Special Tests")
     sp_labels = ["Pregnancy Test","24hrs Urine Protein","24hrs Urine Output",
                  "HEV-IgM","HBeAg","HAV-IgM","Urine AFB","Sputum AFB"]
@@ -808,7 +842,7 @@ TEST_REGISTRY = [
     ("RBC (Urine)",        "RBC",                 "/hpf",        "Urine|Microscopic Examination"),
     ("Crystal",            "Crystal",             "/hpf",        "Urine|Microscopic Examination"),
     ("Cast",               "Cast",                "/hpf",        "Urine|Microscopic Examination"),
-    ("Others (Urine)",     "Others",              "/hpf",        "Urine|Microscopic Examination"),
+    ("Others (Urine)",     "Others",              "",            "Urine|Microscopic Examination"),
     ("Pregnancy Test",     "Pregnancy Test",      "+ve / -ve",   "Special Urine Tests"),
     ("24hrs Urine Protein","24hrs Urine Protein", "",            "Special Urine Tests"),
     ("24hrs Urine Output", "24hrs Urine Output",  "",            "Special Urine Tests"),
@@ -1003,6 +1037,8 @@ def generate_pdf(patient, sections, technician, output_path, section_key=None):
                     pdf.set_xy(RC_X, start_y)
                 if isinstance(ref, list):
                     pdf.test_row_multiref(label, value, ref, dash_x=dx)
+                elif label == "Others":
+                    pdf.test_row_wrap(label, value, ref, dash_x=dx)
                 else:
                     pdf.test_row(label, value, ref, dash_x=dx)
 
@@ -1078,7 +1114,12 @@ def generate_pdf(patient, sections, technician, output_path, section_key=None):
                         break
                     pdf.set_xy(x_off, y)
                     if isinstance(ref, list):
-                        pdf.test_row_multiref(label, value, ref, dash_x=dx, x=x_off, col_w=col_w)
+                        pdf.set_font("DJ", "", 9.5)
+                        lbl_w = pdf.get_string_width(label)
+                        row_dx = x_off + RC_P + min(lbl_w, col_w * 0.32) + 4
+                        pdf.test_row_multiref(label, value, ref, dash_x=row_dx, x=x_off, col_w=col_w)
+                    elif label == "Others":
+                        pdf.test_row_wrap(label, value, ref, dash_x=dx, x=x_off, col_w=col_w)
                     else:
                         pdf.test_row(label, value, ref, dash_x=dx, x=x_off, col_w=col_w)
                     y = pdf.get_y()
