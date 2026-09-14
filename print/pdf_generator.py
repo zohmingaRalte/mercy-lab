@@ -916,6 +916,25 @@ def generate_pdf(patient, sections, technician, output_path, section_key=None):
         except Exception:
             pass
 
+    # Parse Influenza JSON into display string
+    import json as _json2
+    inf_raw = all_data.get("Influenza", "")
+    if inf_raw and inf_raw.startswith("{"):
+        try:
+            inf_data = _json2.loads(inf_raw)
+            inf_type   = inf_data.get("type",   "") or ""
+            inf_result = inf_data.get("result", "") or ""
+            if inf_type and inf_result:
+                all_data["Influenza"] = f"Type {inf_type}: {inf_result}"
+            elif inf_result:
+                all_data["Influenza"] = inf_result
+            elif inf_type:
+                all_data["Influenza"] = f"Type {inf_type}"
+            else:
+                all_data["Influenza"] = ""
+        except Exception:
+            pass
+
     from collections import OrderedDict
     groups = OrderedDict()
     for entry in TEST_REGISTRY:
