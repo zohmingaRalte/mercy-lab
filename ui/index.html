@@ -182,6 +182,29 @@ html, body { height: 100%; font-family: 'Segoe UI', system-ui, sans-serif; backg
 .rh-toggle label:first-of-type { border-right: 1.5px solid var(--gray-border); }
 .rh-toggle input[type="radio"]:checked + label { background: var(--blue-mid); color: #fff; }
 
+.influenza-wrap {
+  display: flex; align-items: center; gap: 8px; flex: 1;
+  pointer-events: none; opacity: 0.5; transition: opacity 0.2s;
+}
+.influenza-wrap.enabled { pointer-events: all; opacity: 1; }
+.inf-label { font-size: 12px; font-weight: 600; color: var(--text-mid); white-space: nowrap; }
+.inf-type-toggle, .inf-result-toggle {
+  display: inline-flex; border: 1.5px solid var(--gray-border);
+  border-radius: 6px; overflow: hidden;
+}
+.inf-type-toggle input[type="radio"],
+.inf-result-toggle input[type="radio"] { display: none; }
+.inf-type-toggle label, .inf-result-toggle label {
+  padding: 4px 12px; font-size: 12px; font-weight: 600;
+  cursor: pointer; background: #fff; color: var(--text-mid);
+  transition: background 0.15s, color 0.15s;
+}
+.inf-type-toggle label:first-of-type,
+.inf-result-toggle label:first-of-type { border-right: 1.5px solid var(--gray-border); }
+.inf-type-toggle input[type="radio"]:checked + label { background: var(--blue-mid); color: #fff; }
+.inf-result-toggle input[type="radio"]:checked + label.neg { background: var(--green); color: #fff; }
+.inf-result-toggle input[type="radio"]:checked + label.pos { background: var(--red); color: #fff; }
+
 .select-all-wrap {
   display: flex; align-items: center; gap: 6px;
   font-size: 12px; font-weight: 500; color: var(--text-mid);
@@ -437,7 +460,7 @@ body::-webkit-scrollbar { width: 6px; }
     <div class="pat-field ipd-only" style="width:110px">
       <label>Ward</label>
       <select id="pat-ward">
-        <option>General</option><option>Cabin</option><option>Pedia</option>
+        <option>General</option><option>Cabin</option><option>Deluxe</option><option>Pedia</option>
       </select>
     </div>
     <div class="pat-field ipd-only" style="width:80px">
@@ -712,6 +735,8 @@ body::-webkit-scrollbar { width: 6px; }
           <div id="tests-tsh"></div>
           <h3>T3 &amp; T4</h3>
           <div id="tests-t3t4"></div>
+          <h3>Free T3 &amp; Free T4</h3>
+          <div id="tests-freet3t4"></div>
         </div>
       </div>
 
@@ -796,6 +821,8 @@ const TESTS = {
     {key:"PCV",          label:"PCV",          unit:"%",      ref:"40–55"},
     {key:"Bleeding Time",label:"Bleeding Time",unit:"mins",   ref:"1–5"},
     {key:"Clotting Time",label:"Clotting Time",unit:"mins",   ref:"4–9"},
+    {key:"PT",           label:"PT",           unit:"seconds",ref:"11–16"},
+    {key:"INR",          label:"INR",          unit:"",       ref:"0.64–1.17"},
     {key:"Blood Group",  label:"Blood Group",  type:"bloodgroup"},
   ],
   "urine": [
@@ -834,6 +861,7 @@ const TESTS = {
     {key:"BI.MP (Slide)",label:"BI.MP (Slide)",unit:"", ref:"", options:["Negative","Positive"]},
     {key:"BI.MP (ICT)",  label:"BI.MP (ICT)",  unit:"", ref:"", options:["Negative","Positive"]},
     {key:"Scrub Typhus", label:"Scrub Typhus", unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"Influenza",     label:"Influenza",     unit:"", ref:"", type:"influenza"},
     {key:"Typhi IgG IgM",label:"Typhi IgG IgM",unit:"", ref:"", options:["Negative","Positive"]},
   ],
   "dengue": [
@@ -894,6 +922,7 @@ const TESTS = {
     {key:"Sodium (NA)",   label:"Sodium (NA)",   unit:"mmol/L", ref:"135–155"},
     {key:"Potassium (K)", label:"Potassium (K)", unit:"mmol/L", ref:"3.5–5.5"},
     {key:"Chloride",      label:"Chloride",      unit:"mg/dl",  ref:"97–107"},
+    {key:"Ionized Calcium",label:"Ionized Calcium",unit:"mmol/L", ref:"1.15–1.33"},
   ],
   "biochemistry": [
     {key:"S. Calcium",    label:"S. Calcium",    unit:"mg/L",   ref:"8.7–11.0"},
@@ -913,6 +942,10 @@ const TESTS = {
   "t3t4": [
     {key:"T3", label:"T3", unit:"nmol/l", refs:["1.23–3.07"]},
     {key:"T4", label:"T4", unit:"nmol/L", refs:["66–181 nmol/L","5.1–14.1 Ug/dL"]},
+  ],
+  "freet3t4": [
+    {key:"Free T3", label:"Free T3", unit:"pmol/L", refs:["3.1–6.8 pmol/L"]},
+    {key:"Free T4", label:"Free T4", unit:"pmol/L", refs:["12–22 pmol/L"]},
   ],
   "vitd": [
     {key:"Vit D", label:"Vit D", unit:"ng/mL",
@@ -938,12 +971,31 @@ function buildSection(containerId, tests) {
       ? `<div class="test-refs">${refs.join('<br>')}</div>`
       : '';
 
+    const isInfluenza  = t.type === 'influenza';
     const isBloodGroup = t.type === 'bloodgroup';
     const isNP  = t.options && t.options.length === 2
                && t.options[0] === "Negative" && t.options[1] === "Positive";
     const isSeg = t.options && !isNP;
     let inputHtml;
-    if (isBloodGroup) {
+    if (isInfluenza) {
+      const k = t.key;
+      inputHtml = `<div class="influenza-wrap" id="inp-${k}">
+        <span class="inf-label">Type:</span>
+        <div class="inf-type-toggle">
+          <input type="radio" name="inf-type-${k}" id="inf-type-a-${k}" value="A">
+          <label for="inf-type-a-${k}">A</label>
+          <input type="radio" name="inf-type-${k}" id="inf-type-b-${k}" value="B">
+          <label for="inf-type-b-${k}">B</label>
+        </div>
+        <span class="inf-label">Result:</span>
+        <div class="inf-result-toggle">
+          <input type="radio" name="inf-res-${k}" id="inf-neg-${k}" value="Negative">
+          <label for="inf-neg-${k}" class="neg">Negative</label>
+          <input type="radio" name="inf-res-${k}" id="inf-pos-${k}" value="Positive">
+          <label for="inf-pos-${k}" class="pos">Positive</label>
+        </div>
+      </div>`;
+    } else if (isBloodGroup) {
       inputHtml = `<div class="bloodgroup-wrap" id="inp-${t.key}">
         <select id="bg-select" disabled onchange="bgChange()">
           <option value="">—</option>
@@ -1014,7 +1066,10 @@ function toggleTest(cb, noFocus) {
     }
     row.classList.add('checked');
   } else {
-    if (isBG) {
+    if (isInf) {
+      inp.classList.remove('enabled');
+      inp.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+    } else if (isBG) {
       const sel = inp.querySelector('select');
       sel.disabled = true; sel.selectedIndex = 0;
       inp.querySelector('#rh-toggle').classList.remove('enabled');
@@ -1068,7 +1123,7 @@ const SECTION_KEYS = {
   "electrolytes":["electrolytes"],
   "biochemistry":["biochemistry"],
   "cardiac":     ["cardiac"],
-  "tsh":         ["tsh","t3t4"],
+  "tsh":         ["tsh","t3t4","freet3t4"],
   "vitd":        ["vitd"],
   "hba1c":       ["hba1c"],
 };
@@ -1123,7 +1178,13 @@ function collectSections() {
       const cb = document.getElementById(`cb-${t.key}`);
       if (cb && cb.checked) {
         const inp = document.getElementById(`inp-${t.key}`);
-        if (inp.classList.contains('bloodgroup-wrap')) {
+        if (inp.classList.contains('influenza-wrap')) {
+          const typeEl   = inp.querySelector('input[name^="inf-type-"]:checked');
+          const resultEl = inp.querySelector('input[name^="inf-res-"]:checked');
+          const infType   = typeEl   ? typeEl.value   : '';
+          const infResult = resultEl ? resultEl.value : '';
+          dict[t.key] = JSON.stringify({ type: infType, result: infResult });
+        } else if (inp.classList.contains('bloodgroup-wrap')) {
           const bg = inp.querySelector('select').value;
           const rhChecked = inp.querySelector('input[type="radio"]:checked');
           const rh = rhChecked ? rhChecked.value : '';
