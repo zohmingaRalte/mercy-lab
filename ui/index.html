@@ -182,6 +182,29 @@ html, body { height: 100%; font-family: 'Segoe UI', system-ui, sans-serif; backg
 .rh-toggle label:first-of-type { border-right: 1.5px solid var(--gray-border); }
 .rh-toggle input[type="radio"]:checked + label { background: var(--blue-mid); color: #fff; }
 
+.dualresult-wrap {
+  display: flex; align-items: center; gap: 10px; flex: 1;
+  pointer-events: none; opacity: 0.5; transition: opacity 0.2s;
+  flex-wrap: wrap;
+}
+.dualresult-wrap.enabled { pointer-events: all; opacity: 1; }
+.dr-group { display: flex; align-items: center; gap: 6px; }
+.dr-label { font-size: 11px; font-weight: 700; color: var(--text-mid); white-space: nowrap; }
+.dr-toggle {
+  display: inline-flex; border: 1.5px solid var(--gray-border);
+  border-radius: 6px; overflow: hidden;
+}
+.dr-toggle input[type="radio"] { display: none; }
+.dr-toggle label {
+  padding: 3px 10px; font-size: 11px; font-weight: 600;
+  cursor: pointer; background: #fff; color: var(--text-mid);
+  transition: background 0.15s, color 0.15s; white-space: nowrap;
+}
+.dr-toggle label:first-of-type { border-right: 1.5px solid var(--gray-border); }
+.dr-toggle input[type="radio"]:checked + label.neg { background: var(--green); color: #fff; }
+.dr-toggle input[type="radio"]:checked + label.pos { background: var(--red); color: #fff; }
+.dr-divider { width: 1px; height: 24px; background: var(--gray-border); }
+
 .influenza-wrap {
   display: flex; align-items: center; gap: 8px; flex: 1;
   pointer-events: none; opacity: 0.5; transition: opacity 0.2s;
@@ -199,7 +222,7 @@ html, body { height: 100%; font-family: 'Segoe UI', system-ui, sans-serif; backg
   cursor: pointer; background: #fff; color: var(--text-mid);
   transition: background 0.15s, color 0.15s;
 }
-.inf-type-toggle label:first-of-type,
+.inf-type-toggle label:not(:last-of-type),
 .inf-result-toggle label:first-of-type { border-right: 1.5px solid var(--gray-border); }
 .inf-type-toggle input[type="radio"]:checked + label { background: var(--blue-mid); color: #fff; }
 .inf-result-toggle input[type="radio"]:checked + label.neg { background: var(--green); color: #fff; }
@@ -861,8 +884,8 @@ const TESTS = {
     {key:"BI.MP (Slide)",label:"BI.MP (Slide)",unit:"", ref:"", options:["Negative","Positive"]},
     {key:"BI.MP (ICT)",  label:"BI.MP (ICT)",  unit:"", ref:"", options:["Negative","Positive"]},
     {key:"Scrub Typhus", label:"Scrub Typhus", unit:"", ref:"", options:["Negative","Positive"]},
-    {key:"Influenza",     label:"Influenza",     unit:"", ref:"", type:"influenza"},
-    {key:"Typhi IgG IgM",label:"Typhi IgG IgM",unit:"", ref:"", options:["Negative","Positive"]},
+    {key:"Influenza",     label:"Influenza",     unit:"", ref:"", type:"influenza", comps:["A","B","A&B"]},
+    {key:"Typhi IgG IgM",label:"Typhi",         unit:"", ref:"", type:"influenza", comps:["IgG","IgM","IgG&IgM"]},
   ],
   "dengue": [
     {key:"Dengue NslAg",   label:"NslAg",     unit:"", ref:"", options:["Negative","Positive"]},
@@ -971,6 +994,7 @@ function buildSection(containerId, tests) {
       ? `<div class="test-refs">${refs.join('<br>')}</div>`
       : '';
 
+    const isDualResult = t.type === 'dualresult';
     const isInfluenza  = t.type === 'influenza';
     const isBloodGroup = t.type === 'bloodgroup';
     const isNP  = t.options && t.options.length === 2
@@ -979,20 +1003,20 @@ function buildSection(containerId, tests) {
     let inputHtml;
     if (isInfluenza) {
       const k = t.key;
+      const comps = t.comps || ["A","B","A&B"];
+      const typeOpts = comps.map((c,i) =>
+        `<input type="radio" name="inf-type-${k}" id="inf-type-${i}-${k}" value="${c}">
+         <label for="inf-type-${i}-${k}">${c}</label>`
+      ).join('');
       inputHtml = `<div class="influenza-wrap" id="inp-${k}">
         <span class="inf-label">Type:</span>
-        <div class="inf-type-toggle">
-          <input type="radio" name="inf-type-${k}" id="inf-type-a-${k}" value="A">
-          <label for="inf-type-a-${k}">A</label>
-          <input type="radio" name="inf-type-${k}" id="inf-type-b-${k}" value="B">
-          <label for="inf-type-b-${k}">B</label>
-        </div>
+        <div class="inf-type-toggle">${typeOpts}</div>
         <span class="inf-label">Result:</span>
         <div class="inf-result-toggle">
           <input type="radio" name="inf-res-${k}" id="inf-neg-${k}" value="Negative">
-          <label for="inf-neg-${k}" class="neg">Negative</label>
+          <label for="inf-neg-${k}" class="neg">Neg</label>
           <input type="radio" name="inf-res-${k}" id="inf-pos-${k}" value="Positive">
-          <label for="inf-pos-${k}" class="pos">Positive</label>
+          <label for="inf-pos-${k}" class="pos">Pos</label>
         </div>
       </div>`;
     } else if (isBloodGroup) {
@@ -1230,21 +1254,46 @@ async function printReport() {
 }
 
 // ── Clear all ─────────────────────────────────────────────────────────────────
-function clearAll() {
-  document.querySelectorAll('input[type=checkbox]').forEach(cb => {
-    if (cb.checked) { cb.checked = false; toggleTest(cb); }
+function resetTests() {
+  // Uncheck all test checkboxes
+  document.querySelectorAll('.test-row input[type=checkbox]').forEach(cb => cb.checked = false);
+  // Uncheck all Select All checkboxes
+  document.querySelectorAll('.select-all-wrap input[type=checkbox]').forEach(cb => cb.checked = false);
+  // Remove checked styling
+  document.querySelectorAll('.test-row.checked').forEach(row => row.classList.remove('checked'));
+  // Reset all text inputs
+  document.querySelectorAll('.test-input').forEach(inp => {
+    inp.disabled = true;
+    inp.classList.remove('enabled');
+    if (inp.tagName === 'SELECT') inp.selectedIndex = 0;
+    else inp.value = '';
   });
-  document.getElementById('pat-name').value = '';
-  document.getElementById('age-num').value = '';
-  document.getElementById('age-sub').value = '';
-  document.getElementById('age-unit').selectedIndex = 0;
-  document.getElementById('age-sub').style.display = 'none';
-  document.getElementById('age-sub-label').style.display = 'none';
-  document.getElementById('pat-age').value = '';
-  document.getElementById('pat-address').value = '';
-  document.getElementById('pat-bed').value = '';
-  setType('IPD');
-  newRef();
+  // Reset np-toggle and seg-bar
+  document.querySelectorAll('.np-toggle, .seg-bar').forEach(w => {
+    w.classList.remove('enabled');
+    w.dataset.value = '';
+    w.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+  });
+  // Reset blood group
+  document.querySelectorAll('.bloodgroup-wrap').forEach(w => {
+    const sel = w.querySelector('select');
+    if (sel) { sel.disabled = true; sel.selectedIndex = 0; }
+    const rht = w.querySelector('#rh-toggle');
+    if (rht) rht.classList.remove('enabled');
+    w.querySelectorAll('input[type=radio]').forEach(r => { r.checked = false; r.disabled = true; });
+  });
+  // Reset influenza
+  document.querySelectorAll('.influenza-wrap').forEach(w => {
+    w.classList.remove('enabled');
+    w.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+  });
+
+  updateBadges();
+  updateCount();
+}
+
+function clearAll() {
+  resetTests();
   showToast('🗑 Cleared');
 }
 
@@ -1377,19 +1426,59 @@ document.addEventListener('click', e => {
   }
 });
 
-// ── Select All ────────────────────────────────────────────────────────────────
+// ── Radio deselect — click selected radio again to uncheck ───────────────────
+document.addEventListener('mousedown', e => {
+  if (e.target.type === 'radio' && e.target.checked) {
+    e.target.dataset.wasChecked = 'true';
+  }
+});
+document.addEventListener('click', e => {
+  if (e.target.type === 'radio' && e.target.dataset.wasChecked === 'true') {
+    e.target.checked = false;
+    e.target.dataset.wasChecked = '';
+  }
+});
+
+// ── Select All ────────────────────────────────────────────────────────────
 function selectAllInPanel(panelId, masterCb) {
   const panel = document.getElementById(panelId);
   if (!panel) return;
   const scrollY = document.getElementById('content').scrollTop;
   const checkboxes = panel.querySelectorAll('.test-row input[type="checkbox"]');
-  checkboxes.forEach(cb => {
-    if (cb.checked !== masterCb.checked) {
-      cb.checked = masterCb.checked;
-      toggleTest(cb, true);
-    }
-  });
-  // Restore scroll position so page doesn't jump
+
+  if (!masterCb.checked) {
+    // Unchecking — reset all inputs in this panel directly
+    checkboxes.forEach(cb => cb.checked = false);
+    panel.querySelectorAll('.test-row.checked').forEach(row => row.classList.remove('checked'));
+    panel.querySelectorAll('.test-input').forEach(inp => {
+      inp.disabled = true; inp.classList.remove('enabled');
+      if (inp.tagName === 'SELECT') inp.selectedIndex = 0; else inp.value = '';
+    });
+    panel.querySelectorAll('.np-toggle, .seg-bar').forEach(w => {
+      w.classList.remove('enabled'); w.dataset.value = '';
+      w.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+    });
+    panel.querySelectorAll('.bloodgroup-wrap').forEach(w => {
+      const sel = w.querySelector('select');
+      if (sel) { sel.disabled = true; sel.selectedIndex = 0; }
+      const rht = w.querySelector('#rh-toggle');
+      if (rht) rht.classList.remove('enabled');
+      w.querySelectorAll('input[type=radio]').forEach(r => { r.checked = false; r.disabled = true; });
+    });
+    panel.querySelectorAll('.influenza-wrap').forEach(w => {
+      w.classList.remove('enabled');
+      w.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+    });
+
+  } else {
+    // Checking — enable all via toggleTest
+    checkboxes.forEach(cb => {
+      if (!cb.checked) { cb.checked = true; toggleTest(cb, true); }
+    });
+  }
+
+  updateBadges();
+  updateCount();
   requestAnimationFrame(() => {
     document.getElementById('content').scrollTop = scrollY;
   });

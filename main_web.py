@@ -16,12 +16,15 @@ def generate_ref_no():
 class API:
     def print_report(self, patient, sections):
         try:
+            import importlib
+            import print.pdf_generator as pdf_mod
+            importlib.reload(pdf_mod)
             out = os.path.join(BASE_DIR, '_temp_print.pdf')
-            generate_pdf(patient, sections, '', out)
+            pdf_mod.generate_pdf(patient, sections, '', out)
             os.startfile(os.path.abspath(out))
             return {'ok': True}
         except Exception as e:
-            return None
+            return {'ok': False, 'error': str(e)}
 
     def get_ref_no(self):
         return generate_ref_no()
@@ -32,7 +35,8 @@ class API:
 
 if __name__ == '__main__':
     api = API()
-    ui = os.path.join(BASE_DIR, 'ui', 'index.html')
+    ui  = os.path.join(BASE_DIR, 'ui', 'index.html')
+
     window = webview.create_window(
         'Mercy Hospital — Lab Entry System',
         url=f'file:///{ui.replace(os.sep, "/")}',

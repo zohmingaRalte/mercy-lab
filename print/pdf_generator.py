@@ -724,7 +724,7 @@ def _serology(pdf, d):
         {'type':'row',  'label':'BI.MP (ICT)',     'value':R("BI.MP (ICT)"),    'ref':''},
         {'type':'row',  'label':'Scrub Typhus',    'value':R("Scrub Typhus"),   'ref':''},
         {'type':'row',  'label':'Influenza',        'value':R("Influenza"),      'ref':''},
-        {'type':'row',  'label':'Typhi IgG IgM',  'value':R("Typhi IgG IgM"), 'ref':''},
+        {'type':'row',  'label':'Typhi',           'value':R("Typhi IgG IgM"), 'ref':''},
         {'type':'sub',  'label':'Dengue'},
         {'type':'row',  'label':'NslAg',           'value':R("Dengue NslAg"),   'ref':'', 'indent':4},
         {'type':'row',  'label':'IgM / IgG',       'value':R("Dengue IgM/IgG"),'ref':'', 'indent':4},
@@ -863,7 +863,7 @@ TEST_REGISTRY = [
     ("BI.MP (ICT)",        "BI.MP (ICT)",         "",            "Serology & Parasitology"),
     ("Scrub Typhus",       "Scrub Typhus",        "",            "Serology & Parasitology"),
     ("Influenza",          "Influenza",           "",            "Serology & Parasitology"),
-    ("Typhi IgG IgM",      "Typhi IgG IgM",      "",            "Serology & Parasitology"),
+    ("Typhi IgG IgM",      "Typhi",               "",            "Serology & Parasitology"),
     ("Dengue NslAg",       "NslAg",               "",            "Serology & Parasitology|Dengue"),
     ("Dengue IgM/IgG",     "IgM / IgG",           "",            "Serology & Parasitology|Dengue"),
     ("S. Typhi O",         "S. Typhi 'O'",        "",            "Widal"),
@@ -961,22 +961,28 @@ def generate_pdf(patient, sections, technician, output_path, section_key=None):
             pass
 
     import json as _json2
-    inf_raw = all_data.get("Influenza", "")
-    if inf_raw and inf_raw.startswith("{"):
-        try:
-            inf_data = _json2.loads(inf_raw)
-            inf_type   = inf_data.get("type",   "") or ""
-            inf_result = inf_data.get("result", "") or ""
-            if inf_type and inf_result:
-                all_data["Influenza"] = f"Type {inf_type}: {inf_result}"
-            elif inf_result:
-                all_data["Influenza"] = inf_result
-            elif inf_type:
-                all_data["Influenza"] = f"Type {inf_type}"
-            else:
-                all_data["Influenza"] = ""
-        except Exception:
-            pass
+    # Parse influenza-style JSON for Influenza and Typhi IgG IgM
+    for inf_key, inf_prefix in [
+        ("Influenza",     "Type"),
+        ("Typhi IgG IgM", ""),
+    ]:
+        inf_raw = all_data.get(inf_key, "")
+        if inf_raw and inf_raw.startswith("{"):
+            try:
+                inf_data = _json2.loads(inf_raw)
+                inf_type   = inf_data.get("type",   "") or ""
+                inf_result = inf_data.get("result", "") or ""
+                if inf_type and inf_result:
+                    label = f"Type {inf_type}" if inf_prefix else inf_type
+                    all_data[inf_key] = f"{label}: {inf_result}"
+                elif inf_type:
+                    all_data[inf_key] = f"Type {inf_type}" if inf_prefix else inf_type
+                elif inf_result:
+                    all_data[inf_key] = inf_result
+                else:
+                    all_data[inf_key] = ""
+            except Exception:
+                pass
     from collections import OrderedDict
     groups = OrderedDict()
     for entry in TEST_REGISTRY:
