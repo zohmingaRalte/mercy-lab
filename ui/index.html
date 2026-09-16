@@ -1075,9 +1075,12 @@ function toggleTest(cb, noFocus) {
   const inp = document.getElementById(`inp-${key}`);
   const row = cb.closest('.test-row');
   const isWidget = inp.classList.contains('np-toggle') || inp.classList.contains('seg-bar');
-  const isBG = inp.classList.contains('bloodgroup-wrap');
+  const isBG  = inp.classList.contains('bloodgroup-wrap');
+  const isInf = inp.classList.contains('influenza-wrap');
   if (cb.checked) {
-    if (isBG) {
+    if (isInf) {
+      inp.classList.add('enabled');
+    } else if (isBG) {
       inp.querySelector('select').disabled = false;
       inp.querySelector('#rh-toggle').classList.add('enabled');
       inp.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = false);
@@ -1092,7 +1095,10 @@ function toggleTest(cb, noFocus) {
   } else {
     if (isInf) {
       inp.classList.remove('enabled');
-      inp.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+      inp.querySelectorAll('input[type="radio"]').forEach(r => {
+        r.checked = false;
+        r.dispatchEvent(new Event('change'));
+      });
     } else if (isBG) {
       const sel = inp.querySelector('select');
       sel.disabled = true; sel.selectedIndex = 0;
