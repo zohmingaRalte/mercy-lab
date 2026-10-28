@@ -726,6 +726,7 @@ def _serology(pdf, d):
         {'type':'row',  'label':'Influenza',        'value':R("Influenza"),      'ref':''},
         {'type':'row',  'label':'Typhi',           'value':R("Typhi IgG IgM"), 'ref':''},
         {'type':'row',  'label':'Leptospira',      'value':R("Leptospira"),     'ref':''},
+        {'type':'row',  'label':'Malaria',         'value':R("Malaria"),        'ref':''},
         {'type':'sub',  'label':'Dengue'},
         {'type':'row',  'label':'NslAg',           'value':R("Dengue NslAg"),   'ref':'', 'indent':4},
         {'type':'row',  'label':'IgM / IgG',       'value':R("Dengue IgM/IgG"),'ref':'', 'indent':4},
@@ -866,6 +867,7 @@ TEST_REGISTRY = [
     ("Influenza",          "Influenza",           "",            "Serology & Parasitology"),
     ("Typhi IgG IgM",      "Typhi",               "",            "Serology & Parasitology"),
     ("Leptospira",         "Leptospira",          "",            "Serology & Parasitology"),
+    ("Malaria",            "Malaria",             "",            "Serology & Parasitology"),
     ("Dengue NslAg",       "NslAg",               "",            "Serology & Parasitology|Dengue"),
     ("Dengue IgM/IgG",     "IgM / IgG",           "",            "Serology & Parasitology|Dengue"),
     ("S. Typhi O",         "S. Typhi 'O'",        "",            "Widal"),
@@ -968,6 +970,7 @@ def generate_pdf(patient, sections, technician, output_path, section_key=None):
         ("Influenza",     "Type"),
         ("Typhi IgG IgM", ""),
         ("Leptospira",    ""),
+        ("Malaria",       ""),
     ]:
         inf_raw = all_data.get(inf_key, "")
         if inf_raw and inf_raw.startswith("{"):
