@@ -381,6 +381,7 @@ select.test-input:disabled {
 .btn-outline:hover { border-color: var(--blue-mid); color: var(--blue-mid); background: var(--blue-pale); }
 .btn-danger { background: white; color: var(--red); border: 1.5px solid #FED7D7; }
 .btn-danger:hover { background: #FFF5F5; border-color: var(--red); }
+.btn-sm { height: 34px; padding: 0 12px; font-size: 12px; }
 
 /* ── Toast ────────────────────────────────────────────────────────────── */
 #toast {
@@ -498,6 +499,9 @@ body::-webkit-scrollbar { width: 6px; }
                onclick="toggleCal(this)">
         <span onclick="toggleCal(document.getElementById('pat-date'))" style="position:absolute;right:9px;cursor:pointer;font-size:15px;color:var(--blue-mid);">📅</span>
       </div>
+    </div>
+    <div class="pat-field">
+      <button class="btn btn-danger btn-sm" onclick="clearPatient()" title="Clear patient info">✕ Clear</button>
     </div>
   </div>
 
@@ -886,6 +890,7 @@ const TESTS = {
     {key:"Scrub Typhus", label:"Scrub Typhus", unit:"", ref:"", options:["Negative","Positive"]},
     {key:"Influenza",     label:"Influenza",     unit:"", ref:"", type:"influenza", comps:["A","B","A&B"]},
     {key:"Typhi IgG IgM",label:"Typhi",         unit:"", ref:"", type:"influenza", comps:["IgG","IgM","IgG&IgM"]},
+    {key:"Leptospira",   label:"Leptospira",    unit:"", ref:"", type:"influenza", comps:["IgG","IgM","IgG&IgM"]},
   ],
   "dengue": [
     {key:"Dengue NslAg",   label:"NslAg",     unit:"", ref:"", options:["Negative","Positive"]},
@@ -1260,6 +1265,28 @@ async function printReport() {
 }
 
 // ── Clear all ─────────────────────────────────────────────────────────────────
+async function clearPatient() {
+  document.getElementById('pat-name').value = '';
+  document.getElementById('age-num').value = '';
+  document.getElementById('age-sub').value = '';
+  document.getElementById('age-unit').selectedIndex = 0;
+  document.getElementById('age-sub').style.display = 'none';
+  document.getElementById('age-sub-label').style.display = 'none';
+  document.getElementById('pat-age').value = '';
+  document.getElementById('pat-gender').selectedIndex = 0;
+  document.getElementById('pat-address').value = '';
+  document.getElementById('pat-ward').selectedIndex = 0;
+  document.getElementById('pat-bed').value = '';
+  document.getElementById('cal-popup').style.display = 'none';
+  setType('IPD');
+  try {
+    document.getElementById('pat-date').value = await pywebview.api.get_today();
+  } catch (e) {
+    document.getElementById('pat-date').value = '';
+  }
+  showToast('🧹 Patient info cleared');
+}
+
 function resetTests() {
   // Uncheck all test checkboxes
   document.querySelectorAll('.test-row input[type=checkbox]').forEach(cb => cb.checked = false);
